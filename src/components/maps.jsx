@@ -8,16 +8,31 @@ const Map = () => {
   const [viewport, setViewport] = useState({
     width: "100vw",
     height: "100vh",
-    latitude: 43.0731,
-    longitude: -89.4012,
-    zoom: 6.5
+    latitude: 43.693762,
+    longitude: -89.777315,
+    zoom: 7
   });
+
+  const [selected, setSelected] = useState(null);
+
+  useEffect(() => {
+    const listener = e => {
+      if (e.key === "Escape") {
+        setSelected(null);
+      }
+    };
+    window.addEventListener("keydown", listener);
+
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
+  }, []);
 
   return (
     <>
       <ReactMapGL
         {...viewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        mapboxApiAccessToken={process.env.react_app_mapbox_token}
         onViewportChange={viewport => {
           setViewport(viewport);
         }}
@@ -26,14 +41,50 @@ const Map = () => {
         {data.albums.map(album => (
           <Marker
             key={album.id}
-            latitude={album.latitude}
-            longitude={album.longitude}
+            latitude={album.ceremony.latitude}
+            longitude={album.ceremony.longitude}
           >
-            <button className="marker-camera">
+            <button
+              className="marker-camera"
+              onClick={e => {
+                e.preventDefault();
+                setSelected(album);
+              }}
+            >
               <img src={camera} alt="camera icon" />
             </button>
           </Marker>
         ))}
+
+        {selected ? (
+          <Popup
+            key={selected.id}
+            latitude={selected.ceremony.latitude}
+            longitude={selected.ceremony.longitude}
+            onClose={() => {
+              setSelected(null);
+            }}
+            className="popup"
+          >
+            <div>
+              <h2>{selected.client}</h2>
+              {selected.ceremony.locationName ===
+              selected.reception.locationName ? (
+                <>
+                  <p>Ceremony & Reception: {selected.ceremony.locationName}</p>
+                  <p>City: {selected.ceremony.city}</p>
+                </>
+              ) : (
+                <>
+                  <p>Ceremony: {selected.ceremony.locationName}</p>
+                  <p>Reception: {selected.reception.locationName}</p>
+                  <p>City: {selected.ceremony.city}</p>
+                </>
+              )}
+              {selected.story ? <p>Story: {selected.story}</p> : null}
+            </div>
+          </Popup>
+        ) : null}
       </ReactMapGL>
     </>
   );

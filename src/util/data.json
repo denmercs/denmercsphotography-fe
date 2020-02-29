@@ -3,9 +3,359 @@
     {
       "id": 1,
       "client": "William + Marnie",
-      "location": "The Brink Lounge",
-      "latitude": 43.084247,
-      "longitude": -89.377078
+      "story": "",
+      "ceremony": {
+        "locationName": "The Brink Lounge",
+        "city": "Madison, Wisconsin",
+        "latitude": 43.084247,
+        "longitude": -89.377078
+      },
+      "reception": {
+        "locationName": "The Brink Lounge",
+        "city": "Madison, Wisconsin",
+        "latitude": 43.084247,
+        "longitude": -89.377078
+      }
+    },
+    {
+      "id": 2,
+      "client": "Trevor + Jade",
+      "story": "",
+      "ceremony": {
+        "locationName": "Hotel Marshfield",
+        "city": "Marshfield, Wisconsin",
+        "latitude": 44.643716,
+        "longitude": -90.181213
+      },
+      "reception": {
+        "locationName": "Hotel Marshfield",
+        "city": "Marshfield, Wisconsin",
+        "latitude": 44.643716,
+        "longitude": -90.181213
+      }
+    },
+    {
+      "id": 3,
+      "client": "Seth + Kiersten",
+      "story": "",
+      "ceremony": {
+        "locationName": "Riverside Park",
+        "city": "La Crosse, Wisconsin",
+        "latitude": 43.817061,
+        "longitude": -91.255758
+      },
+      "reception": {
+        "locationName": "Maple Grove Venues",
+        "city": "Hamilton, Wisconsin",
+        "latitude": 43.874146,
+        "longitude": -91.111475
+      }
+    },
+    {
+      "id": 4,
+      "client": "Adam + Felicia",
+      "story": "",
+      "ceremony": {
+        "locationName": "Devil's Lake",
+        "city": "Baraboo, Wisconsin",
+        "latitude": 43.418671,
+        "longitude": -89.730968
+      },
+      "reception": {
+        "locationName": "Devil's Lake",
+        "city": "Baraboo, Wisconsin",
+        "latitude": 43.418671,
+        "longitude": -89.730968
+      }
+    },
+    {
+      "id": 5,
+      "client": "Carlos + Emily",
+      "story": "",
+      "ceremony": {
+        "locationName": "Enchanted Valley Acres",
+        "city": "Cross Plains, Wisconsin",
+        "latitude": 43.131635,
+        "longitude": -89.610523
+      },
+      "reception": {
+        "locationName": "Enchanted Valley Acres",
+        "city": "Cross Plains, Wisconsin",
+        "latitude": 43.131635,
+        "longitude": -89.610523
+      }
+    },
+    {
+      "id": 6,
+      "client": "Rick + Darcy",
+      "story": "",
+      "ceremony": {
+        "locationName": "Private Property",
+        "city": "Stevens Point, Wisconsin",
+        "latitude": 44.539953,
+        "longitude": -89.508654
+      },
+      "reception": {
+        "locationName": "Private Property",
+        "city": "Stevens Point, Wisconsin",
+        "latitude": 44.539953,
+        "longitude": -89.508654
+      }
+    },
+    {
+      "id": 7,
+      "client": "Tyler + Taylor",
+      "story": "We've been together for going on 4 years.  We met through a mutual friend and have been inseparable since.",
+      "ceremony": {
+        "locationName": "Lake Leota Park",
+        "city": "Evansville, Wisconsin",
+        "latitude": 42.788092,
+        "longitude": -89.305483
+      },
+      "reception": {
+        "locationName": "Red Barn",
+        "city": "Evansville, Wisconsin",
+        "latitude": 42.781389,
+        "longitude": -89.27268
+      }
+    },
+    {
+      "id": 8,
+      "client": "Brad + Tabitha",
+      "story": "We met in 2014 and bonded over our love of pool and cold drinks. In 2015 we found out we were going to be parents and moved to the Upper Peninsula to start a new life in a quiet area near Brad's family. Today we bond over our love for our wonderful son Oliver and going on camping trips with our son and 2 dogs",
+      "ceremony": {
+        "locationName": "The Old Schoolhouse Special Events",
+        "city": "Merrimac, Wisconsin",
+        "latitude": 43.409314,
+        "longitude": -89.630443
+      },
+      "reception": {
+        "locationName": "The Old Schoolhouse Special Events",
+        "city": "Merrimac, Wisconsin",
+        "latitude": 43.409314,
+        "longitude": -89.630443
+      }
+    },
+    {
+      "id": 9,
+      "client": "Nick + Jaclyn",
+      "story": "Nick and I started as best friends 9 years ago. Then after a year of friendship, something clicked and we fell in love. We have built a life together out of pure love; we have the house, the dog and cat, and now we will be husband and wife. Love is sweet. ",
+      "ceremony": {
+        "locationName": "The Starline Factory",
+        "city": "Harvard, Illinois",
+        "latitude": 42.420868,
+        "longitude": -88.61793
+      },
+      "reception": {
+        "locationName": "The Starline Factory",
+        "city": "Harvard, Illinois",
+        "latitude": 42.420868,
+        "longitude": -88.61793
+      }
+    },
+    {
+      "id": 10,
+      "client": "Dustin + Kayla",
+      "story": "We want our day to be light hearted, fun, and filled with love. We plan to have a short and sweet ceremony and enjoy our night with our loved ones laughing and dancing! ",
+      "ceremony": {
+        "locationName": "Holiday Inn Madison at the American Center",
+        "city": "Sun Prarie, Wisconsin",
+        "latitude": 43.142987,
+        "longitude": -89.296354
+      },
+      "reception": {
+        "locationName": "The Starline Factory",
+        "city": "Sun Prarie, Wisconsin",
+        "latitude": 43.142987,
+        "longitude": -89.296354
+      }
+    },
+    {
+      "id": 11,
+      "client": "Ryan + Amy",
+      "story": "",
+      "ceremony": {
+        "locationName": "The Suburban Bourbon",
+        "city": "Muskego, Wisconsin",
+        "latitude": 42.906556,
+        "longitude": -88.135385
+      },
+      "reception": {
+        "locationName": "The Suburban Bourbon",
+        "city": "Muskego, Wisconsin",
+        "latitude": 42.906556,
+        "longitude": -88.135385
+      }
+    },
+    {
+      "id": 12,
+      "client": "Clint + Ashley",
+      "story": "",
+      "ceremony": {
+        "locationName": "Chapel of the Archangels",
+        "city": "Beaver Dam, Wisconsin",
+        "latitude": 43.44674,
+        "longitude": -88.849024
+      },
+      "reception": {
+        "locationName": "Chapel of the Archangels",
+        "city": "Beaver Dam, Wisconsin",
+        "latitude": 43.44674,
+        "longitude": -88.849024
+      }
+    },
+    {
+      "id": 13,
+      "client": "Bowar + Lisa",
+      "story": "In 1999, Lisa moved into the neighborhood created on Bo's grandparent's old farmland. Six houses apart, Lisa and Aly, Bo/'s sister, became fast friends. Being the first bus stop in the morning and the last in the afternoon, gave them plenty of time for shenanigans- which would often continue at the Dahmen household. Nerf wars, pillow forts and other adventures usually drew in Bo as well. Because she was older, Lisa held the honor of being taller than Bo until his freshman year of high school but once Bo surpassed her, he made sure she was aware of it. After an incident in the high school cafeteria, where Bo and his friends sang the \"Lollipop Guild\" as Lisa walked past, she felt the need to get his cell phone number so that she could scold him about it. One thing led to another, and they became daily texters; texts turned into walks around the neighborhood, which turned into exchanges of poetry and music, which in turn led to a deep understanding of each other and a friendship that neither expected. The day before starting college at UW-Whitewater together, Bo asked Lisa if he could tell her a secret. When she said yes, he kissed her, and the rest is history.",
+      "ceremony": {
+        "locationName": "Wisconsin Historical Society",
+        "city": "Madison, Wisconsin",
+        "latitude": 43.075767,
+        "longitude": -89.399993
+      },
+      "reception": {
+        "locationName": "Wisconsin Historical Society",
+        "city": "Madison, Wisconsin",
+        "latitude": 43.075767,
+        "longitude": -89.399993
+      }
+    },
+    {
+      "id": 14,
+      "client": "Zachary + Madeline",
+      "story": "Maddie and Zach met for their first date in June of 2015 at Karben 4 in Madison Wisconsin.  Maddie was so nervous she spilled her drink all over the bar within the first 10 minutes of meeting Zach. They knew they were meant to be together when they spent time with eachothers extended family and fell in love with them. Maddie and Zach bring balance, comfort, and much laughter to each others lives. They are described by their family as \"2 weird people who found perfect weird love together\". Maddie and Zach enjoy spending time with faimily, traveling, and relaxing at home with their cat Binx.",
+      "ceremony": {
+        "locationName": "Angel Park Pavillion",
+        "city": "Sun Prarie, Wisconsin",
+        "latitude": 43.177985,
+        "longitude": -89.211256
+      },
+      "reception": {
+        "locationName": "Angel Park Pavillion",
+        "city": "Sun Prarie, Wisconsin",
+        "latitude": 43.177985,
+        "longitude": -89.211256
+      }
+    },
+    {
+      "id": 15,
+      "client": "Andrew + Jessica",
+      "story": "We met while working at a call center. Andrew was a trainer and I had just started there. We connected on facebook and started talking to each other outside of work.  Over months we became really good friends and soon talked to each other about everything.  Andrew was on his way back from Lousianna for work and had a 3 hour layover in Minneapolis.  I told him I would come pick him up so he didn't have to wait so long to get home.  After I picked him up from the airport we blasted 90's music like Backstreet Boys and NSYNC and Brittney Spears and sang at the top of our lungs.  We got back to my house and decided to have a couple drinks around the fire.  After me avoiding Andrew while he was trying to tell me how he feels about me he finally grabbed my face in both hands and kissed me.  At that moment I just knew we were ment to be. ",
+      "ceremony": {
+        "locationName": "Stoney Creek",
+        "city": "Onalaska, Wisconsin",
+        "latitude": 43.873851,
+        "longitude": -91.186252
+      },
+      "reception": {
+        "locationName": "Stoney Creek",
+        "city": "Onalaska, Wisconsin",
+        "latitude": 43.873851,
+        "longitude": -91.186252
+      }
+    },
+    {
+      "id": 16,
+      "client": "Ian + Madeline",
+      "story": "Maddy and Ian met one day in 2013 when their mutual friend Heather McElhatton suggested they pair up for a game. After many months of declaring that their relationship was \"not serious\", people began to learn that they really clicked. After years of dates, vacations, and learning to make decisions together, they moved in together in Cedar Falls, IA. They currently live in Cedar Falls in their \"little boo house\", with their cats Arya & Hermione.",
+      "ceremony": {
+        "locationName": "The Wisconsin Union - Memorial Union",
+        "city": "Madison, Wisconsin",
+        "latitude": 43.076373,
+        "longitude": -89.399373
+      },
+      "reception": {
+        "locationName": "The Wisconsin Union - Memorial Union",
+        "city": "Madison, Wisconsin",
+        "latitude": 43.076373,
+        "longitude": -89.399373
+      }
+    },
+    {
+      "id": 17,
+      "client": "Chris + Kaira",
+      "story": "I'd like to say it was love at first sight, but it wasn't! We were both super nervous and it took a few dates to get comfortable with each other. But within just a couple of weeks, we were inseperable. In our four years of being together, it has never gotten any easier to say goodbye. We honestly always miss each other when we're apart! That's why we can't imagine spending the rest of our lives with anyone else. We are so excited to start this new adventure together and look forward to everything life brings to us. ",
+      "ceremony": {
+        "locationName": "St. Gabriel Parish",
+        "city": "Richfield, Wisconsin",
+        "latitude": 43.231354,
+        "longitude": -88.258858
+      },
+      "reception": {
+        "locationName": "Artisan 179",
+        "city": "Pewaukee, Wisconsin",
+        "latitude": 43.084693,
+        "longitude": -88.263662
+      }
+    },
+    {
+      "id": 18,
+      "client": "David + Sara",
+      "story": "We met at UW Stout at the end of the 2012 school year and talked all summer. When the next school year began, we went on a few dates and have been together for almost seven years. David proposed in the winter of 2017 by writing 'Will You Marry Me' in the snow when we were visiting his family in Buffalo, NY. Sara, of course, said yes. ",
+      "ceremony": {
+        "locationName": "Lake Windsor Country Club",
+        "city": "Windsor, Wisconsin",
+        "latitude": 43.208464,
+        "longitude": -89.352497
+      },
+      "reception": {
+        "locationName": "Lake Windsor Country Club",
+        "city": "Windsor, Wisconsin",
+        "latitude": 43.208464,
+        "longitude": -89.352497
+      }
+    },
+    {
+      "id": 19,
+      "client": "Peter + Anna",
+      "story": "Peter and Anna grew up blocks apart and were raised in the same church. Years later they connected via social media and quickly realized how compatible and perfect they were for each other. After dating for a short period of time, they got engaged and are now married a little over a year later. They look forward to growing their own family - just down the road from where they grew up, and in that same church!",
+      "ceremony": {
+        "locationName": "St. John's Lutheran Church",
+        "city": "West Bend, Wisconsin",
+        "latitude": 43.412109,
+        "longitude": -88.182873
+      },
+      "reception": {
+        "locationName": "Memories Ballroom",
+        "city": "Port Washington, Wisconsin",
+        "latitude": 43.441902,
+        "longitude": -87.83854
+      }
+    },
+    {
+      "id": 20,
+      "client": "Grabriel + Karen",
+      "story": "",
+      "ceremony": {
+        "locationName": "Gates of Heaven",
+        "city": "Madison, Wisconsin",
+        "latitude": 43.080339,
+        "longitude": -89.384114
+      },
+      "reception": {
+        "locationName": "Tenney Park",
+        "city": "Madison, Wisconsin",
+        "latitude": 43.092387,
+        "longitude": -89.366597
+      }
+    },
+    {
+      "id": 21,
+      "client": "Jason + Elizabeth",
+      "story": "",
+      "ceremony": {
+        "locationName": "Wisconsin State Capitol",
+        "city": "Madison, Wisconsin",
+        "latitude": 43.074927,
+        "longitude": -89.383998
+      },
+      "reception": {
+        "locationName": "Wisconsin State Capitol",
+        "city": "Madison, Wisconsin",
+        "latitude": 43.074927,
+        "longitude": -89.383998
+      }
     }
   ]
 }
