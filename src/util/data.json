@@ -1,0 +1,11 @@
+{
+  "albums": [
+    {
+      "id": 1,
+      "client": "William + Marnie",
+      "location": "The Brink Lounge",
+      "latitude": 43.084247,
+      "longitude": -89.377078
+    }
+  ]
+}
