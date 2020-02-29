@@ -32,7 +32,7 @@ const Map = () => {
     <>
       <ReactMapGL
         {...viewport}
-        mapboxApiAccessToken={process.env.react_app_mapbox_token}
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
         onViewportChange={viewport => {
           setViewport(viewport);
         }}
