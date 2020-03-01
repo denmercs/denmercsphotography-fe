@@ -3,6 +3,7 @@ import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import data from "../util/data.json";
 import "./maps.scss";
 import camera from "../assets/camera.svg";
+import InfoPopup from "./popup";
 
 const Map = () => {
   const [viewport, setViewport] = useState({
@@ -66,23 +67,7 @@ const Map = () => {
             }}
             className="popup"
           >
-            <div>
-              <h2>{selected.client}</h2>
-              {selected.ceremony.locationName ===
-              selected.reception.locationName ? (
-                <>
-                  <p>Ceremony & Reception: {selected.ceremony.locationName}</p>
-                  <p>City: {selected.ceremony.city}</p>
-                </>
-              ) : (
-                <>
-                  <p>Ceremony: {selected.ceremony.locationName}</p>
-                  <p>Reception: {selected.reception.locationName}</p>
-                  <p>City: {selected.ceremony.city}</p>
-                </>
-              )}
-              {selected.story ? <p>Story: {selected.story}</p> : null}
-            </div>
+            <InfoPopup album={selected} />
           </Popup>
         ) : null}
       </ReactMapGL>
