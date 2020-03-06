@@ -1,24 +1,15 @@
 import React from "react";
 import { getPinterest } from "../store/actions/pinterestActions";
 import { connect } from "react-redux";
-import { PinterestBoardWidget } from "react-pinterest";
 
 const InfoPopup = props => {
   const album = props.album;
   const ceremony = props.album.ceremony;
   const reception = props.album.reception;
 
-  console.log(PinterestBoardWidget);
-
   return (
     <>
       <div>
-        {/* <PinterestBoardWidget
-          board="denmercs/wedding"
-          width={300}
-          height={300}
-          columns={5}
-        /> */}
         <h2>{album.client}</h2>
         {ceremony.locationName === reception.locationName ? (
           <>
