@@ -1,13 +1,13 @@
 import React from "react";
-import Maps from "../components/maps";
+import Header from "../pages/header";
+import Slider from "../components/slider";
 
 const home = () => {
   return (
-    <div>
-      <Maps />
-      <h1>Denmercs Photography</h1>
-      <p>Making Matchless Memories</p>
-    </div>
+    <>
+      <Header />
+      <Slider />
+    </>
   );
 };
 
