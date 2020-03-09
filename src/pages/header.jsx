@@ -8,9 +8,9 @@ const Header = () => {
     <>
       <Container>
         <Navbar expand="lg">
-          <div className="col-6">
+          <Navbar.Brand href="/">
             <img src={logo} alt="denmercs photography logo" className="logo" />
-          </div>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
             id="basic-navbar-nav"
@@ -18,16 +18,24 @@ const Header = () => {
           >
             <Nav className="justify-content-end" activeKey="/home">
               <Nav.Item>
-                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/" className="items">
+                  Home
+                </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/portfolio">Portfolio</Nav.Link>
+                <Nav.Link href="/portfolio" className="items">
+                  Portfolio
+                </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/pricing">Pricing</Nav.Link>
+                <Nav.Link href="/pricing" className="items">
+                  Pricing
+                </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/inquire">Inquire Now</Nav.Link>
+                <Nav.Link href="/inquire" className="inquire">
+                  Inquire Now
+                </Nav.Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>

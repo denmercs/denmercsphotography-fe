@@ -7,9 +7,7 @@ const Portfolio = () => {
   return (
     <>
       <Header />
-      <Container>
-        <Map />
-      </Container>
+      <Map />
     </>
   );
 };
