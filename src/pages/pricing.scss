@@ -1,0 +1,86 @@
+.pricing-news {
+  background-color: #f6f7fa;
+  padding-bottom: 3rem;
+
+  h3 {
+    text-align: center;
+    padding: 3rem;
+    text-transform: uppercase;
+    color: #4267b1;
+    font-weight: 800;
+  }
+  .row {
+    margin: 2rem 0;
+  }
+
+  .card {
+    padding: 2rem;
+    margin: 0 2rem;
+
+    &-icon {
+      width: auto;
+      height: 5rem;
+    }
+
+    &-title {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    &-text {
+      text-align: center;
+    }
+  }
+}
+
+.pricing-list {
+  padding-bottom: 5rem;
+  h3 {
+    margin: 3rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #4267b1;
+    font-weight: 800;
+  }
+
+  h4 {
+    text-align: center;
+    font-size: 1.25rem;
+    padding-bottom: 2rem;
+  }
+
+  h5 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .row {
+    margin: 2rem 0;
+  }
+
+  .card {
+    padding: 2rem;
+    margin: 0 2rem;
+
+    &-icon {
+      width: auto;
+      height: 5rem;
+    }
+
+    &-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 1rem 0;
+      color: #4267b1;
+    }
+
+    &-text {
+      text-align: center;
+    }
+  }
+}

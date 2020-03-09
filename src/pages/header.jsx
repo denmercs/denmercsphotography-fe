@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <>
       <Container>
-        <Navbar expand="lg">
+        <Navbar expand="md" sticky="top">
           <Navbar.Brand href="/">
             <img src={logo} alt="denmercs photography logo" className="logo" />
           </Navbar.Brand>

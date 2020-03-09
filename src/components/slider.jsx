@@ -10,7 +10,7 @@ import imageFive from "../assets/imgFive.jpg";
 const Slider = () => {
   return (
     <>
-      <Carousel>
+      <Carousel interval="5000">
         <Carousel.Item>
           <img
             className="image-slider d-block w-100"
