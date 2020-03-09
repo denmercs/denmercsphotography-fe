@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/logo+name.svg";
 import "./header.scss";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -18,24 +19,24 @@ const Header = () => {
           >
             <Nav className="justify-content-end" activeKey="/home">
               <Nav.Item>
-                <Nav.Link href="/" className="items">
+                <Link to="/" className="items">
                   Home
-                </Nav.Link>
+                </Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/portfolio" className="items">
+                <Link to="/portfolio" className="items">
                   Portfolio
-                </Nav.Link>
+                </Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/pricing" className="items">
+                <Link to="/pricing" className="items">
                   Pricing
-                </Nav.Link>
+                </Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/inquire" className="inquire">
+                <Link to="/inquire" className="inquire">
                   Inquire Now
-                </Nav.Link>
+                </Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
