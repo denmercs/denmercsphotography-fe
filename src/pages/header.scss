@@ -10,30 +10,32 @@
   height: 80px;
 }
 
-.nav-link {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
-  margin: 0 1.5rem;
-}
-
 .items {
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 0 2rem;
   padding-top: 0.7rem;
+  color: black;
   &:active,
   &:hover {
-    color: #4267b1 !important;
+    text-decoration: none;
+    color: #4267b1;
   }
 }
 
 .inquire {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
   border: 2px solid #4267b1;
   margin: 0 1rem;
-  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  color: #4267b1;
 
   &:active,
   &:hover {
-    color: white !important;
-    background-color: #4267b1 !important;
+    text-decoration: none;
+    color: white;
+    background-color: #4267b1;
   }
 }
