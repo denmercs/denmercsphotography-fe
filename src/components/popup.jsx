@@ -1,5 +1,5 @@
 import React from "react";
-import { getPinterest } from "../store/actions/pinterestActions";
+import { getPinterest } from "../store/actions/facebookActions";
 import { connect } from "react-redux";
 
 const InfoPopup = props => {

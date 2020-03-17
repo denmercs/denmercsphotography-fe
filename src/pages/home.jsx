@@ -19,10 +19,6 @@ const home = () => {
             beautiful collection of photos coupled with a one-of-a-kind
             experience!
           </p>
-
-          {/* <Link to="/portfolio" className="intro-button">
-            Portfolio
-          </Link> */}
         </div>
       </Container>
     </div>

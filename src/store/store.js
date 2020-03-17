@@ -1,12 +1,12 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
-import pinterestReducer from "./reducers/pinterestReducer";
+import facebookReducers from "./reducers/facebookReducers";
 
 const middlware = [thunk];
 
 const reducer = combineReducers({
-  pinterest: pinterestReducer
+  facebook: facebookReducers
 });
 
 const composeEnhancers =

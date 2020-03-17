@@ -1,7 +1,7 @@
 import {
-  GET_PINTEREST_BOARD_START,
-  GET_PINTEREST_BOARD_SUCCESS,
-  GET_PINTEREST_BOARD_FAIL
+  FACEBOOK_PAGE_START,
+  FACEBOOK_PAGE_SUCCESS,
+  FACEBOOK_PAGE_FAIL
 } from "..";
 
 const initialState = {
@@ -14,19 +14,19 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case GET_PINTEREST_BOARD_START:
+    case FACEBOOK_PAGE_START:
       return {
         ...state,
         loading: true
       };
-    case GET_PINTEREST_BOARD_SUCCESS:
+    case FACEBOOK_PAGE_SUCCESS:
       return {
         ...state,
         loading: false,
         success: true,
         pinterest: action.payload
       };
-    case GET_PINTEREST_BOARD_FAIL:
+    case FACEBOOK_PAGE_FAIL:
       return {
         ...state,
         success: false,

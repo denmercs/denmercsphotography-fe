@@ -1,5 +1,10 @@
-// .image-slider {
-//   width: 100%;
-//   height: auto;
-//   background-size: cover;
-// }
+.image-slider {
+  background-size: cover;
+  margin: auto;
+}
+
+.carousel-item {
+  align-items: center;
+  height: 30rem;
+  background-color: black;
+}
