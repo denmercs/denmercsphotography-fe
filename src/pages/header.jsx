@@ -23,11 +23,11 @@ const Header = () => {
                   Home
                 </Link>
               </Nav.Item>
-              <Nav.Item>
+              {/* <Nav.Item>
                 <Link to="/portfolio" className="items">
                   Portfolio
                 </Link>
-              </Nav.Item>
+              </Nav.Item> */}
               <Nav.Item>
                 <Link to="/pricing" className="items">
                   Pricing

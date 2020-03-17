@@ -20,9 +20,9 @@ const home = () => {
             experience!
           </p>
 
-          <Link to="/portfolio" className="intro-button">
+          {/* <Link to="/portfolio" className="intro-button">
             Portfolio
-          </Link>
+          </Link> */}
         </div>
       </Container>
     </div>
