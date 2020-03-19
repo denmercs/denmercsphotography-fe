@@ -1,12 +1,15 @@
 import {
-  FACEBOOK_PAGE_START,
-  FACEBOOK_PAGE_SUCCESS,
-  FACEBOOK_PAGE_FAIL
+  FACEBOOK_WEDDING_ALBUMS_START,
+  FACEBOOK_WEDDING_ALBUMS_SUCCESS,
+  FACEBOOK_WEDDING_ALBUMS_FAIL,
+  FACEBOOK_ENGAGEMENT_ALBUMS_START,
+  FACEBOOK_ENGAGEMENT_ALBUMS_SUCCESS,
+  FACEBOOK_ENGAGEMENT_ALBUMS_FAIL
 } from "..";
 
 const initialState = {
-  user: [],
-  pinterest: [],
+  weddingAlbums: [],
+  engagementAlbums: [],
   loading: false,
   success: false,
   error: null
@@ -14,19 +17,37 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case FACEBOOK_PAGE_START:
+    case FACEBOOK_WEDDING_ALBUMS_START:
       return {
         ...state,
         loading: true
       };
-    case FACEBOOK_PAGE_SUCCESS:
+    case FACEBOOK_WEDDING_ALBUMS_SUCCESS:
       return {
         ...state,
         loading: false,
         success: true,
-        pinterest: action.payload
+        weddingAlbums: action.payload
       };
-    case FACEBOOK_PAGE_FAIL:
+    case FACEBOOK_WEDDING_ALBUMS_FAIL:
+      return {
+        ...state,
+        success: false,
+        error: action.payload
+      };
+    case FACEBOOK_ENGAGEMENT_ALBUMS_START:
+      return {
+        ...state,
+        loading: true
+      };
+    case FACEBOOK_ENGAGEMENT_ALBUMS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        success: true,
+        engagementAlbums: action.payload
+      };
+    case FACEBOOK_ENGAGEMENT_ALBUMS_FAIL:
       return {
         ...state,
         success: false,

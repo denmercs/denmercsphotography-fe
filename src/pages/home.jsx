@@ -1,10 +1,9 @@
 import React from "react";
 import Slider from "../components/slider";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import "./home.scss";
 
-const home = () => {
+const Home = () => {
   return (
     <div className="home">
       <Slider />
@@ -25,4 +24,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;

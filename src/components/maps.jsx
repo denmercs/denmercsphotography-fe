@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
-import data from "../util/data.json";
 import "./maps.scss";
-import camera from "../assets/camera.svg";
-import InfoPopup from "./popup";
+import { connect } from "react-redux";
+import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import InfoPopup from "./infopopup";
+import MarkerMap from "./markermap";
 
-const Map = () => {
+const Map = props => {
+  const [initial, setInitial] = useState();
+  const [weddingAlbums, setWeddingAlbums] = useState([]);
+  const [engagementAlbums, setEngagementAlbums] = useState([]);
+  const [selected, setSelected] = useState(null);
   const [viewport, setViewport] = useState({
     width: "100vw",
     height: "100vh",
@@ -13,8 +17,6 @@ const Map = () => {
     longitude: -89.777315,
     zoom: 7
   });
-
-  const [selected, setSelected] = useState(null);
 
   useEffect(() => {
     const listener = e => {
@@ -29,6 +31,14 @@ const Map = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (props.albums !== undefined || props.albums !== "") {
+      setWeddingAlbums(props.weddingAlbums);
+      setEngagementAlbums(props.engagementAlbums);
+      setInitial(props.loading);
+    }
+  }, [props]);
+
   return (
     <>
       <ReactMapGL
@@ -39,29 +49,37 @@ const Map = () => {
         }}
         mapStyle="mapbox://styles/denmercs/ck77u6yc2105e1ilc86oqehqg"
       >
-        {data.albums.map(album => (
-          <Marker
-            key={album.id}
-            latitude={album.ceremony.latitude}
-            longitude={album.ceremony.longitude}
-          >
-            <button
-              className="marker-camera"
-              onClick={e => {
-                e.preventDefault();
-                setSelected(album);
-              }}
-            >
-              <img src={camera} alt="camera icon" />
-            </button>
-          </Marker>
-        ))}
+        {initial ? (
+          <h3>Loading</h3>
+        ) : (
+          <>
+            {weddingAlbums.map(album => (
+              // console.log("on the map component", album);
+              <MarkerMap
+                key={album.id}
+                album={album}
+                selected={selected}
+                setSelected={setSelected}
+              />
+            ))}
+            ,
+            {engagementAlbums.map(album => (
+              // console.log("on the map component", album);
+              <MarkerMap
+                key={album.id}
+                album={album}
+                selected={selected}
+                setSelected={setSelected}
+              />
+            ))}
+          </>
+        )}
 
         {selected ? (
           <Popup
             key={selected.id}
-            latitude={selected.ceremony.latitude}
-            longitude={selected.ceremony.longitude}
+            latitude={parseFloat(selected.latitude)}
+            longitude={parseFloat(selected.longitude)}
             onClose={() => {
               setSelected(null);
             }}
@@ -75,4 +93,10 @@ const Map = () => {
   );
 };
 
-export default Map;
+const mapStateToProps = state => ({
+  weddingAlbums: state.facebook.weddingAlbums,
+  engagementAlbums: state.facebook.engagementAlbums,
+  loading: state.facebook.loading
+});
+
+export default connect(mapStateToProps)(Map);
