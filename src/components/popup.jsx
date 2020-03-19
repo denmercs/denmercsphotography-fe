@@ -1,42 +1,31 @@
 import React from "react";
-import { getPinterest } from "../store/actions/facebookActions";
 import { connect } from "react-redux";
+import { Image, Container, Row, Col } from "react-bootstrap";
 
 const InfoPopup = props => {
   const album = props.album;
-  const ceremony = props.album.ceremony;
-  const reception = props.album.reception;
 
   return (
-    <>
-      <div>
-        <h2>{album.client}</h2>
-        {ceremony.locationName === reception.locationName ? (
-          <>
-            <p>Ceremony & Reception: {ceremony.locationName}</p>
-            <p>City: {ceremony.city}</p>
-          </>
-        ) : (
-          <>
-            <p>Ceremony: {ceremony.locationName}</p>
-            <p>Reception: {reception.locationName}</p>
-            <p>City: {ceremony.city}</p>
-          </>
-        )}
-        {album.story ? <p>Story: {album.story}</p> : null}
-      </div>
-    </>
+    <Container>
+      <Row>
+        <Col>
+          <Image src={album.coverPhoto} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <h3>{album.name}</h3>
+          <p>{album.description}</p>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
 const mapStateToProps = state => {
   return {
-    pinterest: state.pinterest
+    albums: state.facebook.albums
   };
 };
 
-const mapDispatchToProps = {
-  getPinterest
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(InfoPopup);
+export default connect(mapStateToProps)(InfoPopup);
