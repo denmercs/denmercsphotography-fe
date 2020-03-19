@@ -8,6 +8,11 @@
   }
 }
 
-.popup {
-  width: 50%;
+.mapboxgl-popup {
+  &-content {
+    width: 150px;
+  }
+  &-close-button {
+    font-size: 0.8rem;
+  }
 }
