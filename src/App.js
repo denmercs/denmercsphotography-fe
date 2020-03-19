@@ -6,12 +6,16 @@ import Pricing from "./pages/pricing";
 import Inquire from "./pages/inquire";
 import Header from "./pages/header";
 import Footer from "./pages/footer";
-import { getAlbums } from "./store/actions/facebookActions";
+import {
+  getWeddingAlbums,
+  getEngagementAlbums
+} from "./store/actions/facebookActions";
 import { connect } from "react-redux";
 
 const App = props => {
   useEffect(() => {
-    props.getAlbums();
+    props.getWeddingAlbums();
+    props.getEngagementAlbums();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -30,4 +34,4 @@ const App = props => {
   );
 };
 
-export default connect(null, { getAlbums })(App);
+export default connect(null, { getWeddingAlbums, getEngagementAlbums })(App);

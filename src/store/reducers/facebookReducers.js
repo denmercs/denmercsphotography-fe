@@ -1,19 +1,15 @@
 import {
-  FACEBOOK_ALBUMS_START,
-  FACEBOOK_ALBUMS_SUCCESS,
-  FACEBOOK_ALBUMS_FAIL,
-  REVERSE_GEOLOCATION_START,
-  REVERSE_GEOLOCATION_SUCCESS,
-  REVERSE_GEOLOCATION_FAIL
-  // FACEBOOK_ALBUM_DATA_START,
-  // FACEBOOK_ALBUM_DATA_SUCCESS,
-  // FACEBOOK_ALBUM_DATA_FAIL
+  FACEBOOK_WEDDING_ALBUMS_START,
+  FACEBOOK_WEDDING_ALBUMS_SUCCESS,
+  FACEBOOK_WEDDING_ALBUMS_FAIL,
+  FACEBOOK_ENGAGEMENT_ALBUMS_START,
+  FACEBOOK_ENGAGEMENT_ALBUMS_SUCCESS,
+  FACEBOOK_ENGAGEMENT_ALBUMS_FAIL
 } from "..";
 
 const initialState = {
-  albums: [],
-  albumDatas: [],
-  geoCode: [],
+  weddingAlbums: [],
+  engagementAlbums: [],
   loading: false,
   success: false,
   error: null
@@ -21,37 +17,37 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case FACEBOOK_ALBUMS_START:
+    case FACEBOOK_WEDDING_ALBUMS_START:
       return {
         ...state,
         loading: true
       };
-    case FACEBOOK_ALBUMS_SUCCESS:
+    case FACEBOOK_WEDDING_ALBUMS_SUCCESS:
       return {
         ...state,
         loading: false,
         success: true,
-        albums: action.payload
+        weddingAlbums: action.payload
       };
-    case FACEBOOK_ALBUMS_FAIL:
+    case FACEBOOK_WEDDING_ALBUMS_FAIL:
       return {
         ...state,
         success: false,
         error: action.payload
       };
-    case REVERSE_GEOLOCATION_START:
+    case FACEBOOK_ENGAGEMENT_ALBUMS_START:
       return {
         ...state,
         loading: true
       };
-    case REVERSE_GEOLOCATION_SUCCESS:
+    case FACEBOOK_ENGAGEMENT_ALBUMS_SUCCESS:
       return {
         ...state,
         loading: false,
         success: true,
-        geoCode: action.payload
+        engagementAlbums: action.payload
       };
-    case REVERSE_GEOLOCATION_FAIL:
+    case FACEBOOK_ENGAGEMENT_ALBUMS_FAIL:
       return {
         ...state,
         success: false,

@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./maps.scss";
 import { connect } from "react-redux";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
-import camera from "../assets/camera.svg";
-import InfoPopup from "./popup";
+import InfoPopup from "./infopopup";
+import MarkerMap from "./markermap";
 
 const Map = props => {
   const [initial, setInitial] = useState();
-  const [albums, setAlbums] = useState([]);
+  const [weddingAlbums, setWeddingAlbums] = useState([]);
+  const [engagementAlbums, setEngagementAlbums] = useState([]);
   const [selected, setSelected] = useState(null);
   const [viewport, setViewport] = useState({
     width: "100vw",
@@ -32,7 +33,8 @@ const Map = props => {
 
   useEffect(() => {
     if (props.albums !== undefined || props.albums !== "") {
-      setAlbums(props.albums);
+      setWeddingAlbums(props.weddingAlbums);
+      setEngagementAlbums(props.engagementAlbums);
       setInitial(props.loading);
     }
   }, [props]);
@@ -50,23 +52,27 @@ const Map = props => {
         {initial ? (
           <h3>Loading</h3>
         ) : (
-          albums.map(album => (
-            <Marker
-              key={album.id}
-              latitude={parseFloat(album.latitude)}
-              longitude={parseFloat(album.longitude)}
-            >
-              <button
-                className="marker-camera"
-                onClick={e => {
-                  e.preventDefault();
-                  setSelected(album);
-                }}
-              >
-                <img src={camera} alt="camera icon" />
-              </button>
-            </Marker>
-          ))
+          <>
+            {weddingAlbums.map(album => (
+              // console.log("on the map component", album);
+              <MarkerMap
+                key={album.id}
+                album={album}
+                selected={selected}
+                setSelected={setSelected}
+              />
+            ))}
+            ,
+            {engagementAlbums.map(album => (
+              // console.log("on the map component", album);
+              <MarkerMap
+                key={album.id}
+                album={album}
+                selected={selected}
+                setSelected={setSelected}
+              />
+            ))}
+          </>
         )}
 
         {selected ? (
@@ -88,9 +94,9 @@ const Map = props => {
 };
 
 const mapStateToProps = state => ({
-  loading: state.facebook.loading,
-  albums: state.facebook.albums,
-  geoCode: state.facebook.geoCode
+  weddingAlbums: state.facebook.weddingAlbums,
+  engagementAlbums: state.facebook.engagementAlbums,
+  loading: state.facebook.loading
 });
 
 export default connect(mapStateToProps)(Map);
