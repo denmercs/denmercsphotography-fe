@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./maps.scss";
 import { connect } from "react-redux";
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import ReactMapGL, { Popup } from "react-map-gl";
 import InfoPopup from "./infopopup";
 import MarkerMap from "./markermap";
+import { Spinner } from "react-bootstrap";
 
 const Map = props => {
   const [initial, setInitial] = useState();
@@ -50,11 +51,15 @@ const Map = props => {
         mapStyle="mapbox://styles/denmercs/ck77u6yc2105e1ilc86oqehqg"
       >
         {initial ? (
-          <h3>Loading</h3>
+          <div className="spinner">
+            <p>We are preparing our portfolio...</p>
+            <div className="spinner-icon">
+              <Spinner size="lg" animation="border" />
+            </div>
+          </div>
         ) : (
           <>
             {weddingAlbums.map(album => (
-              // console.log("on the map component", album);
               <MarkerMap
                 key={album.id}
                 album={album}
@@ -64,7 +69,6 @@ const Map = props => {
             ))}
             ,
             {engagementAlbums.map(album => (
-              // console.log("on the map component", album);
               <MarkerMap
                 key={album.id}
                 album={album}
@@ -80,10 +84,8 @@ const Map = props => {
             key={selected.id}
             latitude={parseFloat(selected.latitude)}
             longitude={parseFloat(selected.longitude)}
-            onClose={() => {
-              setSelected(null);
-            }}
             className="popup"
+            color="#F6F7FA"
           >
             <InfoPopup album={selected} />
           </Popup>

@@ -1,10 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Image, Container, Row, Col } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Image, Modal, Button } from "react-bootstrap";
 import "./infopopup.scss";
+import { connect } from "react-redux";
+import { getPhotosById } from "../store/actions/facebookActions";
+import Gallery from "react-grid-gallery";
 
 const InfoPopup = props => {
   const album = props.album;
+  const [show, setShow] = useState(false);
+  const [photoAlbum, setPhotoAlbum] = useState([]);
+  // const images = [];
+
   const category = album.name
     .split(" ")
     .splice(0, 1)
@@ -15,21 +21,65 @@ const InfoPopup = props => {
     .join(" ")
     .toString();
 
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => {
+    setShow(true);
+  };
+
+  useEffect(() => {
+    props.getPhotosById(props.album.id);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    setPhotoAlbum(props.photos);
+  }, [props.photos]);
+
+  // images.push(photoAlbum);
+
   return (
-    <div className="album">
-      <div className="album-photo">
-        <Image src={album.coverPhoto} />
+    <>
+      <div className="album">
+        <div className="album-photo">
+          <Image src={album.coverPhoto} />
+        </div>
+        <p className="album-category">{category}</p>
+        <p className="album-name">{coupleName}</p>
+        <button className="album-button" onClick={handleShow}>
+          Open
+        </button>
       </div>
-      <p className="album-category">{category}</p>
-      <p className="album-name">{coupleName}</p>
-    </div>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>{`${category} ${coupleName}`}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="modal-body-description">{album.description}</div>
+          <Gallery images={photoAlbum} />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button className="album-button" onClick={handleClose}>
+            close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 };
 
 const mapStateToProps = state => {
   return {
-    albums: state.facebook.albums
+    albums: state.facebook.albums,
+    photos: state.facebook.photos
   };
 };
 
-export default connect(mapStateToProps)(InfoPopup);
+export default connect(mapStateToProps, { getPhotosById })(InfoPopup);
