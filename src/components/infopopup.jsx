@@ -6,8 +6,7 @@ import { getPhotosById } from "../store/actions/facebookActions";
 import Gallery from "react-grid-gallery";
 
 const InfoPopup = props => {
-  const album = props.album;
-  const [show, setShow] = useState(false);
+  const { album, show, handleClose, handleShow } = props;
   const [photoAlbum, setPhotoAlbum] = useState([]);
   // const images = [];
 
@@ -21,13 +20,6 @@ const InfoPopup = props => {
     .join(" ")
     .toString();
 
-  const handleClose = () => {
-    setShow(false);
-  };
-  const handleShow = () => {
-    setShow(true);
-  };
-
   useEffect(() => {
     props.getPhotosById(props.album.id);
 
@@ -36,8 +28,6 @@ const InfoPopup = props => {
   useEffect(() => {
     setPhotoAlbum(props.photos);
   }, [props.photos]);
-
-  // images.push(photoAlbum);
 
   return (
     <>
@@ -51,6 +41,8 @@ const InfoPopup = props => {
           Open
         </button>
       </div>
+
+      {/* // thinking of changing it to tabbed interface */}
       <Modal
         show={show}
         onHide={handleClose}
