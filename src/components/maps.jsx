@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import ReactMapGL, { Popup } from "react-map-gl";
 import InfoPopup from "./infopopup";
 import MarkerMap from "./markermap";
+import CardsMap from "./cardsmap";
 import { Spinner } from "react-bootstrap";
 
 const Map = props => {
@@ -11,6 +12,7 @@ const Map = props => {
   const [weddingAlbums, setWeddingAlbums] = useState([]);
   const [engagementAlbums, setEngagementAlbums] = useState([]);
   const [selected, setSelected] = useState(null);
+  const [show, setShow] = useState(false);
   const [viewport, setViewport] = useState({
     width: "100vw",
     height: "100vh",
@@ -18,6 +20,13 @@ const Map = props => {
     longitude: -89.777315,
     zoom: 7
   });
+
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => {
+    setShow(true);
+  };
 
   useEffect(() => {
     const listener = e => {
@@ -41,7 +50,15 @@ const Map = props => {
   }, [props]);
 
   return (
-    <>
+    <div className="map">
+      <CardsMap
+        key={Math.random()}
+        className="map-list"
+        weddingAlbums={weddingAlbums}
+        engagementAlbums={engagementAlbums}
+        setSelected={setSelected}
+        handleShow={handleShow}
+      />
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -49,6 +66,7 @@ const Map = props => {
           setViewport(viewport);
         }}
         mapStyle="mapbox://styles/denmercs/ck77u6yc2105e1ilc86oqehqg"
+        className="map-mapgl"
       >
         {initial ? (
           <div className="spinner">
@@ -87,11 +105,17 @@ const Map = props => {
             className="popup"
             color="#F6F7FA"
           >
-            <InfoPopup album={selected} />
+            <InfoPopup
+              key={selected.id}
+              album={selected}
+              show={show}
+              handleClose={handleClose}
+              handleShow={handleShow}
+            />
           </Popup>
         ) : null}
       </ReactMapGL>
-    </>
+    </div>
   );
 };
 
