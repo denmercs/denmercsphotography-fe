@@ -4,9 +4,10 @@ import "./infopopup.scss";
 import { connect } from "react-redux";
 import { getPhotosById } from "../store/actions/facebookActions";
 import Gallery from "react-grid-gallery";
+import SpinnerMap from "./spinnermap";
 
 const InfoPopup = props => {
-  const { album, show, handleClose, handleShow } = props;
+  const { album, show, handleClose, handleShow, initial } = props;
   const [photoAlbum, setPhotoAlbum] = useState([]);
   // const images = [];
 
@@ -31,38 +32,40 @@ const InfoPopup = props => {
 
   return (
     <>
-      <div className="album">
-        <div className="album-photo">
-          <Image src={album.coverPhoto} />
-        </div>
-        <p className="album-category">{category}</p>
-        <p className="album-name">{coupleName}</p>
-        <button className="album-button" onClick={handleShow}>
-          Open
-        </button>
-      </div>
-
-      {/* // thinking of changing it to tabbed interface */}
-      <Modal
-        show={show}
-        onHide={handleClose}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>{`${category} ${coupleName}`}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="modal-body-description">{album.description}</div>
-          <Gallery images={photoAlbum} />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button className="album-button" onClick={handleClose}>
-            close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      {initial ? null : (
+        <>
+          <div className="album">
+            <div className="album-photo">
+              <Image src={album.coverPhoto} />
+            </div>
+            <p className="album-category">{category}</p>
+            <p className="album-name">{coupleName}</p>
+            <button className="album-button" onClick={handleShow}>
+              Open
+            </button>
+          </div>
+          <Modal
+            show={show}
+            onHide={handleClose}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title>{`${category} ${coupleName}`}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <div className="modal-body-description">{album.description}</div>
+              <Gallery images={photoAlbum} />
+            </Modal.Body>
+            <Modal.Footer>
+              <Button className="album-button" onClick={handleClose}>
+                close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </>
+      )}
     </>
   );
 };

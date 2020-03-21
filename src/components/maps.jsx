@@ -67,6 +67,7 @@ const Map = props => {
         }}
         mapStyle="mapbox://styles/denmercs/ck77u6yc2105e1ilc86oqehqg"
         className="map-mapgl"
+        height="86vh"
       >
         {initial ? (
           <SpinnerMap />
@@ -106,6 +107,7 @@ const Map = props => {
               show={show}
               handleClose={handleClose}
               handleShow={handleShow}
+              initial={initial}
             />
           </Popup>
         ) : null}

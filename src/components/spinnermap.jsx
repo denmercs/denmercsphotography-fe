@@ -1,7 +1,7 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
 
-const SpinnerMap = () => {
+const SpinnerMap = props => {
   return (
     <div className="spinner">
       <p>We are preparing our portfolio...</p>
