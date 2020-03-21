@@ -1,0 +1,19 @@
+.spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  width: 50%;
+  opacity: 0.8;
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  &-icon {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+}

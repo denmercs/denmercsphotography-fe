@@ -5,7 +5,7 @@ import ReactMapGL, { Popup } from "react-map-gl";
 import InfoPopup from "./infopopup";
 import MarkerMap from "./markermap";
 import CardsMap from "./cardsmap";
-import { Spinner } from "react-bootstrap";
+import SpinnerMap from "./spinnermap";
 
 const Map = props => {
   const [initial, setInitial] = useState();
@@ -67,14 +67,10 @@ const Map = props => {
         }}
         mapStyle="mapbox://styles/denmercs/ck77u6yc2105e1ilc86oqehqg"
         className="map-mapgl"
+        height="86vh"
       >
         {initial ? (
-          <div className="spinner">
-            <p>We are preparing our portfolio...</p>
-            <div className="spinner-icon">
-              <Spinner size="lg" animation="border" />
-            </div>
-          </div>
+          <SpinnerMap />
         ) : (
           <>
             {weddingAlbums.map(album => (
@@ -111,6 +107,7 @@ const Map = props => {
               show={show}
               handleClose={handleClose}
               handleShow={handleShow}
+              initial={initial}
             />
           </Popup>
         ) : null}

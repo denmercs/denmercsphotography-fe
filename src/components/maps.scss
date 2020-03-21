@@ -17,30 +17,3 @@
     visibility: hidden;
   }
 }
-
-.overlays {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  height: auto;
-}
-
-.spinner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #f6f7fa;
-  height: 20rem;
-  width: 50%;
-  opacity: 0.8;
-
-  p {
-    font-size: 1.2rem;
-  }
-
-  &-icon {
-    margin-top: 2rem;
-  }
-}
