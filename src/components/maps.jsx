@@ -4,8 +4,9 @@ import { connect } from "react-redux";
 import ReactMapGL, { Popup } from "react-map-gl";
 import InfoPopup from "./infopopup";
 import MarkerMap from "./markermap";
-import CardsMap from "./cardsmap";
 import SpinnerMap from "./spinnermap";
+import { ListGroup } from "react-bootstrap";
+import CardsMap from "./cardsmap";
 
 const Map = props => {
   const [initial, setInitial] = useState();
@@ -20,6 +21,7 @@ const Map = props => {
     longitude: -89.777315,
     zoom: 7
   });
+  let listAlbum = [...weddingAlbums, ...engagementAlbums];
 
   const handleClose = () => {
     setShow(false);
@@ -49,16 +51,25 @@ const Map = props => {
     }
   }, [props]);
 
+  console.log(listAlbum);
+
   return (
     <div className="map">
-      <CardsMap
-        key={Math.random()}
-        className="map-list"
-        weddingAlbums={weddingAlbums}
-        engagementAlbums={engagementAlbums}
-        setSelected={setSelected}
-        handleShow={handleShow}
-      />
+      <div className="card-group">
+        <ListGroup>
+          {listAlbum.map(album => (
+            <button
+              onClick={e => {
+                e.preventDefault();
+                setSelected(album);
+                handleShow();
+              }}
+            >
+              <CardsMap album={album} />
+            </button>
+          ))}
+        </ListGroup>
+      </div>
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -74,15 +85,6 @@ const Map = props => {
         ) : (
           <>
             {weddingAlbums.map(album => (
-              <MarkerMap
-                key={album.id}
-                album={album}
-                selected={selected}
-                setSelected={setSelected}
-              />
-            ))}
-            ,
-            {engagementAlbums.map(album => (
               <MarkerMap
                 key={album.id}
                 album={album}
