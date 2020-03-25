@@ -5,7 +5,7 @@ import ReactMapGL, { Popup } from "react-map-gl";
 import InfoPopup from "./infopopup";
 import MarkerMap from "./markermap";
 import SpinnerMap from "./spinnermap";
-import { ListGroup } from "react-bootstrap";
+import { ListGroup, Container } from "react-bootstrap";
 import CardsMap from "./cardsmap";
 
 const Map = props => {
