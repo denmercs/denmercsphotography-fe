@@ -4,7 +4,6 @@ import "./infopopup.scss";
 import { connect } from "react-redux";
 import { getPhotosById } from "../store/actions/facebookActions";
 import Gallery from "react-grid-gallery";
-import SpinnerMap from "./spinnermap";
 
 const InfoPopup = props => {
   const { album, show, handleClose, handleShow, initial } = props;
