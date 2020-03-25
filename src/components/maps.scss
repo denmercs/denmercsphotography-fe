@@ -1,7 +1,14 @@
 .map {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 400px) {
+    div:nth-child(2) {
+      // visibility: hidden;
+      display: none;
+    }
+  }
 }
 
 .marker-camera {
@@ -9,7 +16,7 @@
   background: none;
 
   img {
-    width: 30px;
+    width: auto;
     height: 30px;
   }
 }

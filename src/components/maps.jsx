@@ -51,8 +51,6 @@ const Map = props => {
     }
   }, [props]);
 
-  console.log(listAlbum);
-
   return (
     <div className="map">
       <div className="card-group">
