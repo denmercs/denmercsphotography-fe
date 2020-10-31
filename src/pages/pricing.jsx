@@ -1,6 +1,6 @@
 import React from "react";
 import "./pricing.scss";
-import { Card, Container, Row } from "react-bootstrap";
+import {Card } from "react-materialize";
 import { FaRegCalendarCheck, FaEdit, FaUserShield } from "react-icons/fa";
 import { FiShield } from "react-icons/fi";
 import { AiFillPicture } from "react-icons/ai";
@@ -11,8 +11,8 @@ const Pricing = () => {
     <>
       <div className="pricing-news">
         <h3> Good News First </h3>
-        <Container>
-          <Row className="justify-content-center">
+        <div>
+          <div className="justify-content-center">
             <Card style={{ width: "18rem" }}>
               <FaRegCalendarCheck className="card-icon" />
               <Card.Title>Industry Leading Turnaround Time</Card.Title>
@@ -37,8 +37,8 @@ const Pricing = () => {
                 editing.
               </Card.Text>
             </Card>
-          </Row>
-          <Row className="justify-content-center">
+          </div>
+          <div className="justify-content-center">
             <Card style={{ width: "18rem" }}>
               <AiFillPicture className="card-icon" />
               <Card.Title>Online Galleries</Card.Title>
@@ -63,15 +63,15 @@ const Pricing = () => {
                 receive spam email/messages from us!
               </Card.Text>
             </Card>
-          </Row>
-        </Container>
+          </div>
+        </div>
       </div>
       <div className="pricing-list">
-        <Container>
+        <div>
           <h3> Wedding Photography Pricing </h3>
           <h4>(Travel included up to 200 miles roundtrip)</h4>
           <h5>Wedding and Engagement</h5>
-          <Row className="justify-content-center">
+          <div className="justify-content-center">
             <Card style={{ width: "18rem" }}>
               <Card.Title>10 hrs - $2000</Card.Title>
               <Card.Text>Online Gallery (3 months)</Card.Text>
@@ -90,9 +90,9 @@ const Pricing = () => {
               <Card.Text>2 Photographers</Card.Text>
               <Card.Text>Dennis + Jackie</Card.Text>
             </Card>
-          </Row>
+          </div>
           <h5>Wedding Only</h5>
-          <Row className="justify-content-center">
+          <div className="justify-content-center">
             <Card style={{ width: "18rem" }}>
               <Card.Title>10 hrs - $1800</Card.Title>
               <Card.Text>Online Gallery (1 month)</Card.Text>
@@ -111,8 +111,8 @@ const Pricing = () => {
               <Card.Text>2 Photographers</Card.Text>
               <Card.Text>Dennis + Jackie</Card.Text>
             </Card>
-          </Row>
-        </Container>
+          </div>
+        </div>
       </div>
     </>
   );

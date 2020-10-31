@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Image, Modal, Button } from "react-bootstrap";
 import "./infopopup.scss";
 import { connect } from "react-redux";
 import { getPhotosById } from "../store/actions/facebookActions";
@@ -35,7 +34,7 @@ const InfoPopup = props => {
         <>
           <div className="album">
             <div className="album-photo">
-              <Image src={album.coverPhoto} />
+              <img src={album.coverPhoto} />
             </div>
             <p className="album-category">{category}</p>
             <p className="album-name">{coupleName}</p>
@@ -43,14 +42,14 @@ const InfoPopup = props => {
               Open
             </button>
           </div>
-          <Modal
+          <div
             show={show}
             onHide={handleClose}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
           >
-            <Modal.Header closeButton>
+            {/* <Modal.Header closeButton>
               <Modal.Title>{`${category} ${coupleName}`}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -61,8 +60,8 @@ const InfoPopup = props => {
               <Button className="album-button" onClick={handleClose}>
                 close
               </Button>
-            </Modal.Footer>
-          </Modal>
+            </Modal.Footer> */}
+          </div>
         </>
       )}
     </>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-materialize";
 import logo from "../assets/logo+name.svg";
 import "./header.scss";
 import { Link } from "react-router-dom";
@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <Container>
-        <Navbar expand="md" sticky="top">
+      <div>
+        {/* <Navbar expand="md" sticky="top">
           <Navbar.Brand href="/">
             <img src={logo} alt="denmercs photography logo" className="logo" />
           </Navbar.Brand>
@@ -40,8 +40,8 @@ const Header = () => {
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
-        </Navbar>
-      </Container>
+        </Navbar> */}
+      </div>
     </>
   );
 };

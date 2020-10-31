@@ -8,15 +8,22 @@ import Header from "./pages/header";
 import Footer from "./pages/footer";
 import {
   getWeddingAlbums,
-  getEngagementAlbums
+  getEngagementAlbums,
+  getWeddingInfo,
 } from "./store/actions/facebookActions";
 import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 
-const App = props => {
+const App = () => {
+  const dispatch = useDispatch();
+  // useEffect(() => {
+  //   props.getWeddingAlbums();
+  //   props.getEngagementAlbums();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
   useEffect(() => {
-    props.getWeddingAlbums();
-    props.getEngagementAlbums();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    dispatch(getWeddingInfo());
   }, []);
 
   return (
