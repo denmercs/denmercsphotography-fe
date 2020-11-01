@@ -1,0 +1,16 @@
+.wedding {
+  &-list {
+    padding: 0 2rem;
+
+    h3 {
+      font-family: "Oxygen";
+      text-transform: uppercase;
+      letter-spacing: 0.75rem;
+    }
+  }
+  &-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -1,21 +1,24 @@
-import React, {useState,useEffect} from 'react';
-import {useDispatch} from "react-redux"
-import {getPhotosById} from "../store/actions/facebookActions"
-import {Card, CardTitle} from "react-materialize";
+import React from 'react';
+import {Card, CardTitle, Icon} from "react-materialize";
+import "./weddingcard.scss"
 
 const WeddingCard = ({album}) => {
-
-    const {name, id} = album;
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getPhotosById(id))
-
-    }, [])
+    let name = album.name.replace("Wedding: ", "");
+    let card = (
+        <div className="wedding-card">
+            <Card
+                header={<CardTitle image={album.picture.data.url} reveal waves="light"/>}
+                reveal={<p> {name}</p>}
+                revealIcon={<Icon>more_vert</Icon>}
+    ></Card>
+        </div>
+)
+        
+            
     
     return (
         <>
-            <Card header={<CardTitle image="">Card Title</CardTitle>}></Card>
+            {card}
         </>
     )
 }

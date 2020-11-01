@@ -46,7 +46,7 @@ export const getWeddingInfo = () => (dispatch) => {
     })
     .catch((err) => {
       dispatch({
-        type: FACEBOOK_WEDDING_INFO_START,
+        type: FACEBOOK_WEDDING_INFO_FAIL,
         payload: err,
       });
     });
