@@ -1,14 +1,66 @@
 .header {
-  width: 1200px;
+  background-color: #e9ecef;
+  width: 2000px;
   display: flex;
   justify-content: center;
-  margin: auto 0;
+
+  ul {
+    position: fixed;
+    left: 3rem;
+  }
 
   &-menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+
     p {
       text-transform: uppercase;
       letter-spacing: 0.15rem;
+      color: black;
+      font-size: 1.25rem;
+      margin: 2rem 0;
+
+      &:active,
+      &:hover {
+        color: #4267b1;
+      }
     }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.nav {
+  &-link {
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .active {
+      color: #4367b1;
+      font-weight: bold;
+    }
+
+    a {
+      margin: 1rem 0;
+      text-transform: uppercase;
+      color: #000;
+
+      &:active,
+      &:hover {
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-logo {
+    margin: 0 2rem;
   }
 }
 

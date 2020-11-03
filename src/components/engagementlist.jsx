@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector} from "react-redux";
-import WeddingCard from "./weddingcard";
+import EngagementCards from "./engagementcard";
 import "./weddinglist.scss"
 
 const WeddingList = () => {
@@ -8,12 +8,13 @@ const WeddingList = () => {
     let card;
 
     if(albums !== undefined) {
-        card = albums.map(album => <WeddingCard key={album.id} album={album} />)
+        card = albums.map(album => <EngagementCards key={album.id} album={album} />)
     }
 
     return (
-        <div className="wedding-list">
-            <div className="wedding-card">
+        <div className="Engagement-list">
+            <h3>Engagements</h3>
+            <div className="Engagement-card">
                 {card}
             </div>
         </div>

@@ -1,20 +1,41 @@
 import React from "react";
-import { SideNav, SideNavItem, Button } from "react-materialize";
-import logo from "../assets/logo+name.svg";
+import logo from "../assets/logo192.png";
 import "./header.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import {Sidenav, Nav} from 'rsuite';
 
 const Header = () => {
   return (
-    <>
-      <SideNav id="SideNav-10"
-    options={{
-      draggable: true
-    }}
-    trigger={<Button node="button">SIDE NAV DEMO</Button>} >
-        <SideNavItem>Home</SideNavItem>
-      </SideNav>
-    </>
+    <div className="header" >
+      <Sidenav>
+      <Sidenav.Body>
+        <Nav className="header-menu">
+          <div className="nav-logo">
+            <NavLink to="/" >
+                <img src={logo} alt="denmercs logo"  />
+            </NavLink>
+          </div>
+          <div className="nav-link">
+          <NavLink to="/engagement">
+            Engagement
+          </NavLink>
+          <NavLink to="/maps">
+            Maps
+          </NavLink>
+          <NavLink to="/faqs">
+            FAQs
+          </NavLink>
+          <NavLink to="/pricing">
+            Pricing
+          </NavLink>
+          <NavLink to="/inquire">
+            Inquire
+          </NavLink>
+          </div>
+        </Nav>
+      </Sidenav.Body>
+    </Sidenav>
+    </div>
   );
 };
 

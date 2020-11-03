@@ -10,6 +10,7 @@
     "formik": "^2.1.4",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
+    "react-burger-menu": "^2.9.0",
     "react-dom": "^16.12.0",
     "react-grid-gallery": "^0.5.5",
     "react-icons": "^3.9.0",
@@ -23,6 +24,7 @@
     "react-scroll": "^1.7.16",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "rsuite": "^4.8.4",
     "yup": "^0.28.1"
   },
   "scripts": {

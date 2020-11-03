@@ -1,6 +1,12 @@
 .wedding {
   &-list {
     margin: 2rem 0;
+    h3 {
+      font-family: "Oxygen";
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+    }
   }
   &-card {
     display: flex;

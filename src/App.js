@@ -4,6 +4,8 @@ import Home from "./pages/home";
 import Portfolio from "./pages/portfolio";
 import Pricing from "./pages/pricing";
 import Inquire from "./pages/inquire";
+import Engagement from "./components/engagementlist";
+import Weddings from "./components/weddinglist";
 import {
   getWeddingAlbums,
   getEngagementAlbums,
@@ -12,6 +14,8 @@ import {
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 import "./App.scss";
+import Header from "./pages/header";
+import Footer from "./pages/footer";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -27,12 +31,18 @@ const App = () => {
 
   return (
     <>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/maps" component={Portfolio} />
-        <Route path="/pricing" component={Pricing} />
-        <Route path="/inquire" component={Inquire} />
-      </Switch>
+      <div className="layout">
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Weddings} />
+          <Route exact path="/engagement" component={Engagement} />
+          <Route path="/maps" component={Portfolio} />
+          <Route path="/pricing" component={Pricing} />
+          <Route path="/inquire" component={Inquire} />
+        </Switch>
+        <Footer />
+      </div>
+      <div></div>
     </>
   );
 };
