@@ -1,26 +1,12 @@
 import React from 'react'
-import WeddingList from '../components/weddinglist'
-import {Container, Row, Col} from "react-bootstrap";
-import Footer from './footer'
-import Header from './header'
 import "./home.scss"
 
 const Home = () => {
     return (
-        <Container fluid>
-                <Row>
-                    <Col xs={2} id="sidebar-wrapper">      
-                    <Header />
-                    </Col>
-                    <Col  xs={10} id="page-content-wrapper">
-                    <WeddingList />
-                    </Col> 
-                </Row>
-                <Row>
-                    <Footer />
-                </Row>
-            </Container>
-
+        <>
+            <h3>Hi there!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi ratione doloribus nostrum hic. Voluptate aliquid officiis consequatur dicta voluptatibus nam soluta eligendi similique repellat nobis ipsa dolorum accusamus qui, quos asperiores eos officia blanditiis recusandae repellendus ex explicabo voluptas vero consectetur at. Voluptatibus, animi dolorum eaque et tempora fugit.</p>
+        </>
     )
 }
 

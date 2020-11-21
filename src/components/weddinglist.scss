@@ -1,10 +1,13 @@
 .wedding {
   &-list {
-    margin: 2rem 0;
+    margin: 1.5rem;
   }
+
   &-card {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    margin: 0 2rem;
   }
 }

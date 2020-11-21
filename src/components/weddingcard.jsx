@@ -1,22 +1,22 @@
 import React from 'react';
-import {Card, CardTitle} from "react-materialize";
+import {Card} from "react-bootstrap";
 import { Link } from 'react-router-dom';
 
 import "./weddingcard.scss"
 
 const WeddingCard = ({album}) => {
     let name = album.name.replace("Wedding: ", "");
+    const image = album.picture.data.url;
     const id = album.id
-    let card = (
-        <div className="wedding-card">
-            <Card
-                header={<CardTitle image={album.picture.data.url}><Link to={`/album/${id}`}>{name}</Link></CardTitle>}
-            />
-        </div>
-    )
+
     return (
         <>
-            {card}
+            <div className="wedding-album">
+                <Card>
+                    <Card.Img variant="top" src={image} />
+                    <Link to={`/album/${id}`}>{name}</Link>
+                </Card>
+            </div>
         </>
     )
 }

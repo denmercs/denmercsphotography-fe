@@ -1,7 +1,7 @@
 import React from "react";
 import {Nav} from "react-bootstrap";
 import "./header.scss";
-import logo from "../assets/logo192.png"
+import logo from "../assets/logo.png"
 
 const Header = () => {
   return (
@@ -18,10 +18,10 @@ const Header = () => {
               </div>
               <div className="link-group">
                   <Nav.Item>
-                      <Nav.Link href="/home">Home</Nav.Link>
+                      <Nav.Link href="/">Home</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                      <Nav.Link href="/Weddings">Weddings</Nav.Link>
+                      <Nav.Link href="/weddings">Weddings</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                       <Nav.Link href="/engagement">Engagement</Nav.Link>
