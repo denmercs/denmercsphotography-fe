@@ -1,10 +1,10 @@
 import React from 'react'
 import {useSelector} from "react-redux";
 import EngagementCards from "./engagementcard";
-import "./weddinglist.scss"
+import "./engagementlist.scss"
 
 const WeddingList = () => {
-    const albums = useSelector(state => state.facebook.items)
+    const albums = useSelector(state => state.facebook.engagementAlbums)
     let card;
 
     if(albums !== undefined) {
@@ -12,12 +12,12 @@ const WeddingList = () => {
     }
 
     return (
-        <div className="Engagement-list">
-            <h3>Engagements</h3>
-            <div className="Engagement-card">
-                {card}
-            </div>
+        <div className="engagement-list">
+        <h3>Engagements</h3>
+        <div className="engagement-card">
+            {card}
         </div>
+    </div>
     )
 }
 

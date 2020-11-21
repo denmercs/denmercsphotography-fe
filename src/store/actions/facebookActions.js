@@ -11,6 +11,9 @@ import {
   FACEBOOK_WEDDING_INFO_START,
   FACEBOOK_WEDDING_INFO_SUCCESS,
   FACEBOOK_WEDDING_INFO_FAIL,
+  FACEBOOK_ENGAGEMENT_INFO_START,
+  FACEBOOK_ENGAGEMENT_INFO_SUCCESS,
+  FACEBOOK_ENGAGEMENT_INFO_FAIL,
 } from "..";
 import axios from "../../util/axiosConfig";
 
@@ -28,25 +31,6 @@ export const getWeddingAlbums = () => (dispatch) => {
     .catch((err) => {
       dispatch({
         type: FACEBOOK_WEDDING_ALBUMS_FAIL,
-        payload: err,
-      });
-    });
-};
-
-export const getWeddingInfo = () => (dispatch) => {
-  dispatch({ type: FACEBOOK_WEDDING_INFO_START });
-
-  axios
-    .get("/facebook/weddings")
-    .then((res) => {
-      dispatch({
-        type: FACEBOOK_WEDDING_INFO_SUCCESS,
-        payload: res.data,
-      });
-    })
-    .catch((err) => {
-      dispatch({
-        type: FACEBOOK_WEDDING_INFO_FAIL,
         payload: err,
       });
     });
@@ -85,6 +69,44 @@ export const getPhotosById = (id) => (dispatch) => {
     .catch((err) => {
       dispatch({
         type: FACEBOOK_GET_PHOTOS_FAIL,
+        payload: err,
+      });
+    });
+};
+
+export const getWeddingInfo = () => (dispatch) => {
+  dispatch({ type: FACEBOOK_WEDDING_INFO_START });
+
+  axios
+    .get("/facebook/weddings")
+    .then((res) => {
+      dispatch({
+        type: FACEBOOK_WEDDING_INFO_SUCCESS,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      dispatch({
+        type: FACEBOOK_WEDDING_INFO_FAIL,
+        payload: err,
+      });
+    });
+};
+
+export const getEngagmentInfo = () => (dispatch) => {
+  dispatch({ type: FACEBOOK_ENGAGEMENT_INFO_START });
+
+  axios
+    .get("/facebook/engagements")
+    .then((res) => {
+      dispatch({
+        type: FACEBOOK_ENGAGEMENT_INFO_SUCCESS,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      dispatch({
+        type: FACEBOOK_ENGAGEMENT_INFO_FAIL,
         payload: err,
       });
     });

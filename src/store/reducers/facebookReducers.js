@@ -11,6 +11,9 @@ import {
   FACEBOOK_WEDDING_INFO_START,
   FACEBOOK_WEDDING_INFO_FAIL,
   FACEBOOK_WEDDING_INFO_SUCCESS,
+  FACEBOOK_ENGAGEMENT_INFO_START,
+  FACEBOOK_ENGAGEMENT_INFO_SUCCESS,
+  FACEBOOK_ENGAGEMENT_INFO_FAIL,
 } from "..";
 
 const initialState = {
@@ -87,11 +90,29 @@ export default function (state = initialState, action) {
     case FACEBOOK_WEDDING_INFO_SUCCESS:
       return {
         ...state,
-        items: action.payload,
+        weddingAlbums: action.payload,
         success: true,
         loading: false,
       };
     case FACEBOOK_WEDDING_INFO_FAIL:
+      return {
+        ...state,
+        success: false,
+        error: action.payload,
+      };
+    case FACEBOOK_ENGAGEMENT_INFO_START:
+      return {
+        ...state,
+        loading: true,
+      };
+    case FACEBOOK_ENGAGEMENT_INFO_SUCCESS:
+      return {
+        ...state,
+        engagementAlbums: action.payload,
+        success: true,
+        loading: false,
+      };
+    case FACEBOOK_ENGAGEMENT_INFO_FAIL:
       return {
         ...state,
         success: false,

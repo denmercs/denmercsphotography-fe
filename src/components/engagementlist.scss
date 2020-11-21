@@ -1,16 +1,13 @@
-.wedding {
+.engagement {
   &-list {
-    margin: 2rem 0;
-    h3 {
-      font-family: "Oxygen";
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5rem;
-    }
+    margin: 1.5rem;
   }
+
   &-card {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    margin: 0 2rem;
   }
 }

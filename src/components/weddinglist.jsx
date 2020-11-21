@@ -4,7 +4,7 @@ import WeddingCard from "./weddingcard";
 import "./weddinglist.scss"
 
 const WeddingList = () => {
-    const albums = useSelector(state => state.facebook.items)
+    const albums = useSelector(state => state.facebook.weddingAlbums)
     let card;
 
     if(albums !== undefined) {
@@ -13,6 +13,7 @@ const WeddingList = () => {
 
     return (
         <div className="wedding-list">
+            <h3>Weddings</h3>
             <div className="wedding-card">
                 {card}
             </div>

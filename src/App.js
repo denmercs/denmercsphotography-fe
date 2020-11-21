@@ -8,6 +8,7 @@ import {
   getWeddingAlbums,
   getEngagementAlbums,
   getWeddingInfo,
+  getEngagmentInfo,
 } from "./store/actions/facebookActions";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -29,6 +30,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getWeddingInfo());
+    dispatch(getEngagmentInfo());
   }, []);
 
   return (

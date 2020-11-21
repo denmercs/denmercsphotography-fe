@@ -1,25 +1,20 @@
-.wedding {
-  &-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  &-card {
+.engagement {
+  &-album {
     margin: 1rem;
-    .material-icons {
-      display: none;
-    }
+    width: 200px;
 
-    .card {
-      &-image img {
-        height: 200px;
-        width: auto !important;
-        filter: brightness(80%);
-      }
+    a {
+      color: #000;
+      font-size: 0.8rem;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 2rem 1rem;
 
-      &-content {
-        display: none;
+      &:active,
+      &:hover {
+        color: #4267b1;
+        text-decoration: none;
+        font-weight: 500;
       }
     }
   }
