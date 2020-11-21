@@ -23,7 +23,7 @@
 
   .card {
     padding: 2rem;
-    margin: 0 2rem;
+    margin: 2rem;
 
     @media only screen and (max-width: 990px) {
       margin: 1rem 0.5rem;
@@ -80,6 +80,8 @@
   .card {
     padding: 2rem;
     margin: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
 
     @media only screen and (max-width: 990px) {
       margin: 1rem 0.5rem;

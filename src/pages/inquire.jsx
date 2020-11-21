@@ -1,9 +1,10 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import "./inquire.scss";
 
 const Inquire = () => {
   return (
-    <>
+    <Container>
       <h3 className="inquire-title">Inquire Now</h3>
       <iframe
         id="sprout-iframe"
@@ -12,7 +13,7 @@ const Inquire = () => {
         scrolling="no"
         className="inquire-form"
       ></iframe>
-    </>
+    </Container>
   );
 };
 

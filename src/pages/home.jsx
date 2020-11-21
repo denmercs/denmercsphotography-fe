@@ -34,6 +34,7 @@ const Home = () => {
                 </Col>
                 <Col xs={6} md={8} lg={8}>
                     <p>A perfect blend of classic and modern is our goal. For the last 4 years, we have been creating images that are timeless, not trendy. Our laid-back personality allows you to focus on the important aspects of the day like spending time with your loved ones while we take care of the beautiful photos and videos that reflect the details and moments that make your wedding unique to you.  We are excited to work with you!</p>
+                    <p>~ Dennis & Jackie</p>
                 </Col>
             </Row>
         </Container>
