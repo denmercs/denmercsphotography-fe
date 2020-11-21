@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "./pages/home";
 import Portfolio from "./pages/portfolio";
 import Pricing from "./pages/pricing";
 import Inquire from "./pages/inquire";
@@ -16,6 +15,7 @@ import { useDispatch } from "react-redux";
 import "./App.scss";
 import Header from "./pages/header";
 import Footer from "./pages/footer";
+import AlbumInfo from "./components/AlbumInfo";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -39,6 +39,7 @@ const App = () => {
           <Route path="/maps" component={Portfolio} />
           <Route path="/pricing" component={Pricing} />
           <Route path="/inquire" component={Inquire} />
+          <Route exact path="/album/:id" component={AlbumInfo} />
         </Switch>
         <Footer />
       </div>
