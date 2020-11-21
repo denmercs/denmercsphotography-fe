@@ -4,7 +4,6 @@ import Portfolio from "./pages/portfolio";
 import Pricing from "./pages/pricing";
 import Inquire from "./pages/inquire";
 import Engagement from "./components/engagementlist";
-import Weddings from "./components/weddinglist";
 import {
   getWeddingAlbums,
   getEngagementAlbums,
@@ -13,9 +12,9 @@ import {
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 import "./App.scss";
-import Header from "./pages/header";
-import Footer from "./pages/footer";
 import AlbumInfo from "./components/AlbumInfo";
+import WeddingList from "./components/engagementlist";
+import Home from "./pages/home";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -32,18 +31,17 @@ const App = () => {
   return (
     <>
       <div className="layout">
-        <Header />
         <Switch>
-          <Route exact path="/" component={Weddings} />
+          <Route exact path="/" component={WeddingList} />
           <Route exact path="/engagement" component={Engagement} />
-          <Route path="/maps" component={Portfolio} />
+          {/* <Route exact path="/videos" component={Videos} /> */}
+          {/* <Route path="/maps" component={Portfolio} /> */}
           <Route path="/pricing" component={Pricing} />
           <Route path="/inquire" component={Inquire} />
           <Route exact path="/album/:id" component={AlbumInfo} />
         </Switch>
-        <Footer />
+        <Home />
       </div>
-      <div></div>
     </>
   );
 };

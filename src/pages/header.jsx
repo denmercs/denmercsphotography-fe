@@ -1,41 +1,40 @@
 import React from "react";
-import logo from "../assets/logo192.png";
+import {Nav} from "react-bootstrap";
 import "./header.scss";
-import { NavLink } from "react-router-dom";
-import {Sidenav, Nav} from 'rsuite';
+import logo from "../assets/logo192.png"
 
 const Header = () => {
   return (
-    <div className="header" >
-      <Sidenav>
-      <Sidenav.Body>
-        <Nav className="header-menu">
-          <div className="nav-logo">
-            <NavLink to="/" >
-                <img src={logo} alt="denmercs logo"  />
-            </NavLink>
-          </div>
-          <div className="nav-link">
-          <NavLink to="/engagement">
-            Engagement
-          </NavLink>
-          <NavLink to="/maps">
-            Maps
-          </NavLink>
-          <NavLink to="/faqs">
-            FAQs
-          </NavLink>
-          <NavLink to="/pricing">
-            Pricing
-          </NavLink>
-          <NavLink to="/inquire">
-            Inquire
-          </NavLink>
-          </div>
-        </Nav>
-      </Sidenav.Body>
-    </Sidenav>
-    </div>
+    <>
+         <Nav className="col-md-12 d-none d-md-block bg-light sidebar"
+            activeKey="/home"
+            >
+              <div className="sidebar-sticky">
+                  <img src={logo} alt="denmercs photography logo" className="logo" />
+                  <div className="logo-name">
+                    <h1>Denmercs</h1>
+                    <p>Photo + Video</p>
+                  </div>
+              </div>
+              <div className="link-group">
+                  <Nav.Item>
+                      <Nav.Link href="/home">Home</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                      <Nav.Link href="/Weddings">Weddings</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                      <Nav.Link href="/engagement">Engagement</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                      <Nav.Link href="/pricing">Pricing</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                      <Nav.Link href="/inquire">Inquire</Nav.Link>
+                  </Nav.Item>
+              </div>
+            </Nav>
+      </>
   );
 };
 
