@@ -1,6 +1,10 @@
 .wedding {
   &-list {
     margin: 1.5rem;
+
+    h3 {
+      text-align: center;
+    }
   }
 
   &-card {

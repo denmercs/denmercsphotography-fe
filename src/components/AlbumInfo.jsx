@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Gallery from 'react-grid-gallery';
 import { useSelector, useDispatch } from 'react-redux'
 import { getPhotosById } from '../store/actions/facebookActions';
+import "./albumInfo.scss"
 
 
 const AlbumInfo = (props) => {
@@ -12,10 +13,6 @@ const AlbumInfo = (props) => {
     useEffect(() => {
         dispatch(getPhotosById(id))
     }, [])
-
-
-
-    console.log('this is the photo', photos)
 
     return (
         <div>

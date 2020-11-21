@@ -1,5 +1,6 @@
 import React from "react";
 import {Nav} from "react-bootstrap";
+import {Link} from "react-router-dom"
 import "./header.scss";
 import logo from "../assets/logo.png"
 
@@ -18,19 +19,19 @@ const Header = () => {
               </div>
               <div className="link-group">
                   <Nav.Item>
-                      <Nav.Link href="/">Home</Nav.Link>
+                      <Nav.Link as={Link} to="/">Home</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                      <Nav.Link href="/weddings">Weddings</Nav.Link>
+                      <Nav.Link as={Link} to="/weddings">Weddings</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                      <Nav.Link href="/engagement">Engagement</Nav.Link>
+                      <Nav.Link as={Link} to="/engagement">Engagement</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                      <Nav.Link href="/pricing">Pricing</Nav.Link>
+                      <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                      <Nav.Link href="/inquire">Inquire</Nav.Link>
+                      <Nav.Link as={Link} to="/inquire">Inquire</Nav.Link>
                   </Nav.Item>
               </div>
             </Nav>

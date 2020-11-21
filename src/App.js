@@ -5,20 +5,17 @@ import Pricing from "./pages/pricing";
 import Inquire from "./pages/inquire";
 import Engagement from "./components/engagementlist";
 import {
-  getWeddingAlbums,
-  getEngagementAlbums,
   getWeddingInfo,
   getEngagmentInfo,
 } from "./store/actions/facebookActions";
-import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
-import "./App.scss";
-import AlbumInfo from "./components/AlbumInfo";
+import AlbumInfo from "./components/albumInfo";
 import WeddingList from "./components/weddinglist";
 import { Container, Row, Col } from "react-bootstrap";
 import Home from "./pages/home";
 import Footer from "./pages/footer";
 import Header from "./pages/header";
+import "./App.scss";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -48,8 +45,8 @@ const App = () => {
                 <Route exact path="/engagement" component={Engagement} />
                 {/* <Route exact path="/videos" component={Videos} /> */}
                 {/* <Route path="/maps" component={Portfolio} /> */}
-                <Route path="/pricing" component={Pricing} />
-                <Route path="/inquire" component={Inquire} />
+                <Route exact path="/pricing" component={Pricing} />
+                <Route exact path="/inquire" component={Inquire} />
                 <Route exact path="/album/:id" component={AlbumInfo} />
               </Switch>
             </Col>
@@ -63,4 +60,4 @@ const App = () => {
   );
 };
 
-export default connect(null, { getWeddingAlbums, getEngagementAlbums })(App);
+export default App;

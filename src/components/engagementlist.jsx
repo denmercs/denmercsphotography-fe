@@ -13,11 +13,11 @@ const WeddingList = () => {
 
     return (
         <div className="engagement-list">
-        <h3>Engagements</h3>
-        <div className="engagement-card">
-            {card}
+            <h3>Engagements</h3>
+            <div className="engagement-card">
+                {card}
+            </div>
         </div>
-    </div>
     )
 }
 
