@@ -8,11 +8,11 @@
 
 .inquire {
   &-form {
-    display: block;
-    margin: 0;
-    padding: 0;
-    width: 1px;
-    min-width: 100%;
-    height: 2246px;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  &-container {
+    padding-bottom: 5rem;
   }
 }
