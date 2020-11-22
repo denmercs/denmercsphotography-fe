@@ -18,26 +18,26 @@ const Home = () => {
 
     return (
         <>
-                <Carousel>
-                {
-                    link.map(photo => (
-                        <Carousel.Item key={photo.id}>
-                            <img src={`${photo.src}`} className="d-block w-100 carousel-img"/>
-                        </Carousel.Item>
-                    ))
-                }
-                </Carousel>
-        <Container className="home">
-            <Row>
-                <Col xs={6} md={4} lg={4}>
-                    <Image src="https://i.ibb.co/31V0bWZ/family-picture.jpg" className="denmercs-photo"/>
-                </Col>
-                <Col xs={6} md={8} lg={8}>
-                    <p>A perfect blend of classic and modern is our goal. For the last 4 years, we have been creating images that are timeless, not trendy. Our laid-back personality allows you to focus on the important aspects of the day like spending time with your loved ones while we take care of the beautiful photos and videos that reflect the details and moments that make your wedding unique to you.  We are excited to work with you!</p>
-                    <p>~ Dennis & Jackie</p>
-                </Col>
-            </Row>
-        </Container>
+            <Carousel>
+            {
+                link.map(photo => (
+                    <Carousel.Item key={photo.id}>
+                        <img src={`${photo.src}`} className="d-block w-100 carousel-img"/>
+                    </Carousel.Item>
+                ))
+            }
+            </Carousel>
+            <Container className="home">
+                <Row>
+                    <Image src="https://i.ibb.co/31V0bWZ/family-picture.jpg" className="home-photo"/>
+                </Row>
+                <Row>
+                    <div className="home-intro">
+                        <p>A perfect blend of classic and modern is our goal. For the last 4 years, we have been creating images that are timeless, not trendy. Our laid-back personality allows you to focus on the important aspects of the day like spending time with your loved ones while we take care of the beautiful photos and videos that reflect the details and moments that make your wedding unique to you.  We are excited to work with you!</p>
+                        <p>~ Dennis & Jackie</p>
+                    </div>
+                </Row>
+            </Container>
         </>
     )
 }

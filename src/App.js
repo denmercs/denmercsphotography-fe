@@ -35,10 +35,8 @@ const App = () => {
       <div className="layout">
         <Container fluid>
           <Row>
-            <Col xs={2} id="sidebar-wrapper">
+            <Col>
               <Header />
-            </Col>
-            <Col xs={10} id="page-content-wrapper">
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/weddings" component={WeddingList} />

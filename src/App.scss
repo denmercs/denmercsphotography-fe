@@ -1,23 +1,17 @@
 .layout {
   display: flex;
+  flex-direction: column;
 }
 
-#sidebar-wrapper {
-  min-height: 100vh !important;
-  width: 100vw;
-  -webkit-transition: margin 0.25s ease-out;
-  -moz-transition: margin 0.25s ease-out;
-  -o-transition: margin 0.25s ease-out;
-  transition: margin 0.25s ease-out;
+@media only screen and (min-width: 688px) {
+  #sidebar-wrapper {
+    min-height: 20vh !important;
+    padding: 0;
+  }
 }
-#sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
-}
-
-#page-content-wrapper {
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+@media only screen and (min-width: 320px) {
+  #sidebar-wrapper {
+    min-height: 0vh !important;
+    padding: 0;
+  }
 }

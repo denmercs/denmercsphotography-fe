@@ -1,5 +1,19 @@
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #000;
+
+  &-img {
+    margin: 0 auto;
+    width: 50% !important;
+  }
+}
+
 .home {
-  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
 
   h3 {
     font-size: 1.25rem;
@@ -10,20 +24,39 @@
     font-size: 1.2rem;
     text-align: justify;
   }
-  .denmercs-photo {
-    width: 300px;
-    height: auto;
+  &-photo {
+    width: auto;
+    height: 250px;
+    margin: 0 2rem;
+  }
+
+  &-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      text-align: center;
+    }
   }
 }
 
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  background-color: #000;
+@media only screen and (max-width: 600px) {
+  .home {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
 
-  &-img {
-    margin: 0 auto;
-    width: 50% !important;
+@media only screen and (min-width: 992px) {
+  .home {
+    flex-direction: row;
+    p {
+      font-size: 1rem;
+    }
   }
 }

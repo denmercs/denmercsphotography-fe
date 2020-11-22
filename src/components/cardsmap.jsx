@@ -1,6 +1,6 @@
 import React from "react";
 import "./cardsmap.scss";
-import {Card} from "react-materialize"
+import {Card} from "react-bootstrap"
 
 const CardsMap = props => {
   const { album } = props;
