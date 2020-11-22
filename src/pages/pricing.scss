@@ -2,18 +2,6 @@
   background-color: #f6f7fa;
   padding-bottom: 3rem;
 
-  h3 {
-    text-align: center;
-    padding: 2.5rem 0;
-    text-transform: uppercase;
-    color: #4267b1;
-    font-weight: 800;
-
-    @media only screen and (max-width: 990px) {
-      padding: 1.5rem;
-      margin: 0;
-    }
-  }
   .row {
     margin: 2rem 0;
     @media only screen and (max-width: 990px) {
@@ -47,15 +35,21 @@
   }
 }
 
+.pricing-header {
+  text-align: center;
+  padding: 2.5rem 0;
+  text-transform: uppercase;
+  color: #4267b1;
+  font-weight: 800;
+
+  @media only screen and (max-width: 990px) {
+    padding: 1.5rem;
+    margin: 0;
+  }
+}
+
 .pricing-list {
   padding-bottom: 5rem;
-  h3 {
-    margin: 3rem 0;
-    text-align: center;
-    text-transform: uppercase;
-    color: #4267b1;
-    font-weight: 800;
-  }
 
   h4 {
     text-align: center;

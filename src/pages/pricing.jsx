@@ -93,10 +93,64 @@ const Pricing = () => {
         }
       },
     ])
+
+    const [vidoePricing1, setVideoPricing1] = useState([
+      {
+        items: {
+          title: "10 hrs - $1200",
+          time: "60 seconds teaser trailer",
+          highlight: "Highlight reel (6-9 mins)",
+          videographers: "1 Videographer"
+        }
+      },
+      {
+        items: {
+          title: "8 hrs - $1000",
+          time: "60 seconds teaser trailer",
+          highlight: "Highlight reel (6-9 mins)",
+          videographers: "1 Videographer"
+        }
+      },
+      {
+        items: {
+          title: "6 hrs - $800",
+          time: "60 seconds teaser trailer",
+          highlight: "Highlight reel (6-9 mins)",
+          videographers: "1 Videographer"
+        }
+      },
+    ])
+
+    const [vidoePricing2, setVideoPricing2] = useState([
+      {
+        items: {
+          title: "10 hrs - $1400",
+          time: "60 seconds teaser trailer",
+          highlight: "Highlight reel (6-9 mins)",
+          videographers: "2 Videographers"
+        }
+      },
+      {
+        items: {
+          title: "8 hrs - $1200",
+          time: "60 seconds teaser trailer",
+          highlight: "Highlight reel (6-9 mins)",
+          videographers: "2 Videographers"
+        }
+      },
+      {
+        items: {
+          title: "6 hrs - $1000",
+          time: "60 seconds teaser trailer",
+          highlight: "Highlight reel (6-9 mins)",
+          videographers: "2 Videographers"
+        }
+      },
+    ])
   return (
     <>
       <Container className="pricing-news">
-        <h3> Good News First </h3>
+        <h3 className="pricing-header"> Good News First </h3>
         <Col>
           <Row className="justify-content-center">
             {
@@ -119,7 +173,7 @@ const Pricing = () => {
       </Container>
       <Container className="pricing-list">
         <Col>
-          <h3> Wedding Photography Pricing </h3>
+          <h3 className="pricing-header"> Wedding Photography Pricing </h3>
           <h4>(Travel included up to 200 miles roundtrip)</h4>
           <h5>Wedding and Engagement</h5>
           <Row>
@@ -147,6 +201,42 @@ const Pricing = () => {
                     <Card.Title>{price.items.title}</Card.Title>
                     <Card.Text>{price.items.time}</Card.Text>
                     <Card.Text>{price.items.photographers}</Card.Text>
+                  </Card>
+                </>
+              )
+            })
+          }
+          </Row>
+          <h3 className="pricing-header">Wedding Videography Pricing</h3>
+          <h4>(Travel included up to 200 miles roundtrip)</h4>
+          <h5>Video Only</h5>
+          <Row>
+          {
+            vidoePricing1.map(price => {
+              return (
+                <>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Title>{price.items.title}</Card.Title>
+                    <Card.Text>{price.items.time}</Card.Text>
+                    <Card.Text>{price.items.highlight}</Card.Text>
+                    <Card.Text>{price.items.videographers}</Card.Text>
+                  </Card>
+                </>
+              )
+            })
+          }
+          </Row>
+
+          <Row>
+          {
+            vidoePricing2.map(price => {
+              return (
+                <>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Title>{price.items.title}</Card.Title>
+                    <Card.Text>{price.items.time}</Card.Text>
+                    <Card.Text>{price.items.highlight}</Card.Text>
+                    <Card.Text>{price.items.videographers}</Card.Text>
                   </Card>
                 </>
               )
