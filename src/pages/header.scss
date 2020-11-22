@@ -29,13 +29,7 @@
   text-transform: uppercase;
 }
 
-@media only screen and (max-width: 319px) {
-  .navbar {
-    justify-content: end;
-  }
-}
-
-@media only screen and (min-width: 320px) {
+@media only screen and (max-width: 425px) {
   .navbar-brand {
     display: flex;
     flex-direction: column;
