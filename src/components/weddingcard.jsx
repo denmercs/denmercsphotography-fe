@@ -12,12 +12,15 @@ const WeddingCard = (props) => {
         <>
             <div className="wedding-album">
                 <Card>
-                    <Card.Img variant="top" src={image} />
+                    
                     <Link to={{
                         pathname: `/album/${id}`,
                         albumProps: { album: props.album}
 
-                    }}>{name}</Link>
+                    }}>
+                        <Card.Img variant="top" src={image} />
+                        <p>{name}</p>
+                    </Link>
                 </Card>
             </div>
         </>

@@ -1,7 +1,5 @@
 .wedding {
   &-list {
-    margin: 1.5rem;
-
     h3 {
       text-align: center;
       padding: 1rem 0;
@@ -16,6 +14,8 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    margin: 0 2rem;
+    a {
+      padding: 0;
+    }
   }
 }
