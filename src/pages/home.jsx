@@ -1,27 +1,45 @@
-import React from "react";
-import Slider from "../components/slider";
-import { Container } from "react-bootstrap";
-import "./home.scss";
+import React, {useState} from 'react'
+import {Container, Row, Col, Image, Carousel} from "react-bootstrap"
+import "./home.scss"
 
 const Home = () => {
-  return (
-    <div className="home">
-      <Slider />
-      <Container>
-        <div className="intro">
-          <p>
-            Denmercs Photography is a husband and wife duo offering a wedding
-            photography service specializing in capturing unique and beautiful
-            portraiture in Wisconsin. Our style of wedding photography is deeply
-            rooted in wedding photojournalism. Using natural light, flash
-            techniques and mother nature’s flawless backdrop we produce a
-            beautiful collection of photos coupled with a one-of-a-kind
-            experience!
-          </p>
-        </div>
-      </Container>
-    </div>
-  );
-};
+    const [link, setLink] = useState(
+        [{id: 1, src: "https://i.ibb.co/fD383kM/FB-IMG-1561349353497.jpg"},
+        {id: 2, src: "https://i.ibb.co/tXxBqVW/Jane-Ernesto-003.jpg"}, 
+        {id: 4, src: "https://i.ibb.co/RvLwXvy/FB-IMG-1565404143809.jpg"},
+        {id: 6, src: "https://i.ibb.co/xqPRJjQ/FB-IMG-1561349275071.jpg"},
+        {id: 9, src: "https://i.ibb.co/VT00Fhk/Felicia-Adam-016.jpg"},
+        {id: 10, src: "https://i.ibb.co/c2QHZJm/Jacklyn-Nicholas-020.jpg"},
+        {id: 11, src: "https://i.ibb.co/pyjCDzC/Jade-Trevor-138.jpg"}, 
+        {id: 13, src: "https://i.ibb.co/nDtWdqq/FB-IMG-1564272598592.jpg"},
+        {id: 14, src: "https://i.ibb.co/KXdPbM9/Taylor-Tyler-367.jpg"}]
+    )
+    
 
-export default Home;
+    return (
+        <>
+            <Carousel>
+            {
+                link.map(photo => (
+                    <Carousel.Item key={photo.id}>
+                        <img src={`${photo.src}`} className="d-block w-100 carousel-img"/>
+                    </Carousel.Item>
+                ))
+            }
+            </Carousel>
+            <Container className="home">
+                <Row>
+                    <Image src="https://i.ibb.co/31V0bWZ/family-picture.jpg" className="home-photo"/>
+                </Row>
+                <Row>
+                    <div className="home-intro">
+                        <p>A perfect blend of classic and modern is our goal. For the last 4 years, we have been creating images that are timeless, not trendy. Our laid-back personality allows you to focus on the important aspects of the day like spending time with your loved ones while we take care of the beautiful photos and videos that reflect the details and moments that make your wedding unique to you.  We are excited to work with you!</p>
+                        <p>~ Dennis & Jackie</p>
+                    </div>
+                </Row>
+            </Container>
+        </>
+    )
+}
+
+export default Home

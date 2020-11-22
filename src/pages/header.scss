@@ -1,75 +1,59 @@
 .navbar {
-  background-color: white;
-  @media only screen and (max-width: 990px) {
-    z-index: 999;
-    padding: 1rem;
+  background-color: #fafafa !important;
+  display: flex;
+
+  &-brand {
+    display: flex;
+    padding: 1rem 0;
+    .logo {
+      width: 60px;
+      height: auto;
+      margin: 0 auto;
+      margin-right: 1rem;
+    }
+
+    p {
+      text-transform: uppercase;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
   }
 }
 
-.intro {
-  margin-top: 5rem;
+.nav-item {
+  padding: 0 1rem;
+}
+
+.topbar {
   text-align: center;
-  line-height: 2.5;
-  font-size: 1rem;
-}
-
-.logo {
-  width: auto;
-  height: 80px;
-  font-family: "Saira", sans-serif;
-
-  @media only screen and (max-width: 990px) {
-    height: 50px;
-    margin: 0 0.5rem;
-  }
-}
-
-.items {
   text-transform: uppercase;
-  text-decoration: none;
-  margin: 0 2rem;
-  padding-top: 0.7rem;
-  color: black;
-  &:active,
-  &:hover {
-    text-decoration: none;
-    color: #4267b1;
-  }
+}
 
-  @media only screen and (max-width: 990px) {
-    margin: 0 0.5rem;
-  }
-  @media only screen and (max-width: 440px) {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    margin: 0;
+@media only screen and (max-width: 319px) {
+  .navbar {
+    justify-content: end;
   }
 }
 
-.inquire {
-  font-weight: 600;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 2px solid #4267b1;
-  margin: 0 1rem;
-  padding: 0.8rem 1.5rem;
-  color: #4267b1;
-
-  &:active,
-  &:hover {
-    text-decoration: none;
-    color: white;
-    background-color: #4267b1;
-  }
-  @media only screen and (max-width: 440px) {
-    display: -webkit-box;
+@media only screen and (min-width: 320px) {
+  .navbar-brand {
     display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    margin: 0;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
+    flex-direction: column;
+
+    p {
+      font-size: 0.7rem;
+      display: none;
+    }
+  }
+}
+@media only screen and (min-width: 688px) {
+  .topbar {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .nav-item {
+    padding: 0 0.5rem;
   }
 }

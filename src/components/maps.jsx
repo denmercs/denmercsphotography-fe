@@ -5,7 +5,6 @@ import ReactMapGL, { Popup } from "react-map-gl";
 import InfoPopup from "./infopopup";
 import MarkerMap from "./markermap";
 import SpinnerMap from "./spinnermap";
-import { ListGroup, Container } from "react-bootstrap";
 import CardsMap from "./cardsmap";
 
 const Map = props => {
@@ -54,7 +53,7 @@ const Map = props => {
   return (
     <div className="map">
       <div className="card-group">
-        <ListGroup>
+        <li>
           {listAlbum.map(album => (
             <button
               onClick={e => {
@@ -66,7 +65,7 @@ const Map = props => {
               <CardsMap album={album} />
             </button>
           ))}
-        </ListGroup>
+        </li>
       </div>
       <ReactMapGL
         {...viewport}
