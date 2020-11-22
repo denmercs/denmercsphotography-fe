@@ -4,6 +4,7 @@ import {Container, Col, Row, Image} from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import { getPhotosById } from '../store/actions/facebookActions';
 import loadingGIF from "../assets/wedding.gif"
+import {Button} from "react-bootstrap"
 import "./albumInfo.scss"
 
 
@@ -17,10 +18,12 @@ const AlbumInfo = (props) => {
         dispatch(getPhotosById(id))
     }, [])
 
-    console.log('this is the props in albuminfo', props)
+    const handleClick = () => props.history.goBack();
+
     return (
         <>
-        <Container>
+        <Container className="album">
+            <Button onClick={handleClick}>Go Back</Button>
             <Col>
                 <Row>
                     <h3>{album.name}</h3>
