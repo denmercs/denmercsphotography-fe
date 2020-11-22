@@ -29,9 +29,21 @@
   text-transform: uppercase;
 }
 
+@media only screen and (max-width: 319px) {
+  .navbar {
+    justify-content: end;
+  }
+}
+
 @media only screen and (min-width: 320px) {
-  .topbar {
-    font-size: 0.8rem;
+  .navbar-brand {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 0.7rem;
+      display: none;
+    }
   }
 }
 @media only screen and (min-width: 688px) {
