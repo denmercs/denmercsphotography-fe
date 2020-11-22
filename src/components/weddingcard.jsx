@@ -4,17 +4,20 @@ import { Link } from 'react-router-dom';
 
 import "./weddingcard.scss"
 
-const WeddingCard = ({album}) => {
-    let name = album.name.replace("Wedding: ", "");
-    const image = album.picture.data.url;
-    const id = album.id
-
+const WeddingCard = (props) => {
+    let name = props.album.name.replace("Wedding: ", "");
+    const image = props.album.picture.data.url;
+    const id = props.album.id
     return (
         <>
             <div className="wedding-album">
                 <Card>
                     <Card.Img variant="top" src={image} />
-                    <Link to={`/album/${id}`}>{name}</Link>
+                    <Link to={{
+                        pathname: `/album/${id}`,
+                        albumProps: { album: props.album}
+
+                    }}>{name}</Link>
                 </Card>
             </div>
         </>

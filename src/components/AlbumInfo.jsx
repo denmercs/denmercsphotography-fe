@@ -9,6 +9,7 @@ import "./albumInfo.scss"
 
 const AlbumInfo = (props) => {
     const id = props.match.params.id;
+    const album = props.location.albumProps.album;
     const dispatch = useDispatch();
     const {photos, loading} = useSelector(state => state.facebook)
 
@@ -16,15 +17,27 @@ const AlbumInfo = (props) => {
         dispatch(getPhotosById(id))
     }, [])
 
+    console.log('this is the props in albuminfo', props)
     return (
+        <>
         <Container>
             <Col>
+                <Row>
+                    <h3>{album.name}</h3>
+                </Row>
+                <Row>
+                    <p>{album.location}</p>
+                </Row>
+                <Row>
+                    <p>{album.description}</p>
+                </Row>
                 {
                     (loading) ? (<Row className="loadingGIF"><Image src={loadingGIF}/></Row>) : <Gallery images={photos} />
                     
                 }
             </Col>
         </Container>
+        </>
     )
 }
 
